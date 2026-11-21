@@ -1,0 +1,93 @@
+{
+  "updated_at": "2026-11-21T21:14:06.624Z",
+  "games": [
+    {
+      "id": "2026020360",
+      "date": "2026-11-21",
+      "label": "Blackhawks @ Flames",
+      "status": "LIVE",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020360.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020360.HTM"
+    },
+    {
+      "id": "2026020364",
+      "date": "2026-11-21",
+      "label": "Blue Jackets @ Maple Leafs",
+      "status": "FUT"
+    },
+    {
+      "id": "2026020363",
+      "date": "2026-11-21",
+      "label": "Capitals @ Bruins",
+      "status": "FUT"
+    },
+    {
+      "id": "2026020368",
+      "date": "2026-11-21",
+      "label": "Devils @ Blues",
+      "status": "FUT"
+    },
+    {
+      "id": "2026020370",
+      "date": "2026-11-21",
+      "label": "Ducks @ Mammoth",
+      "status": "FUT"
+    },
+    {
+      "id": "2026020365",
+      "date": "2026-11-21",
+      "label": "Flyers @ Canadiens",
+      "status": "FUT"
+    },
+    {
+      "id": "2026020369",
+      "date": "2026-11-21",
+      "label": "Golden Knights @ Jets",
+      "status": "FUT"
+    },
+    {
+      "id": "2026020367",
+      "date": "2026-11-21",
+      "label": "Islanders @ Red Wings",
+      "status": "FUT"
+    },
+    {
+      "id": "2026020366",
+      "date": "2026-11-21",
+      "label": "Kings @ Senators",
+      "status": "FUT"
+    },
+    {
+      "id": "2026020372",
+      "date": "2026-11-21",
+      "label": "Kraken @ Sharks",
+      "status": "FUT"
+    },
+    {
+      "id": "2026020359",
+      "date": "2026-11-21",
+      "label": "Oilers @ Hurricanes",
+      "status": "FINAL",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020359.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020359.HTM"
+    },
+    {
+      "id": "2026020362",
+      "date": "2026-11-21",
+      "label": "Penguins @ Predators",
+      "status": "FUT"
+    },
+    {
+      "id": "2026020361",
+      "date": "2026-11-21",
+      "label": "Sabres @ Panthers",
+      "status": "FUT"
+    },
+    {
+      "id": "2026020371",
+      "date": "2026-11-21",
+      "label": "Wild @ Canucks",
+      "status": "FUT"
+    }
+  ]
+}\n
