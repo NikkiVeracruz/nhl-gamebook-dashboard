@@ -71,10 +71,9 @@ async function refreshLive(){
     if(!elapsed){elapsed=document.createElement("p");elapsed.className="elapsed-final";card.append(elapsed)}
     const target=card.querySelector(".live-status");
     if(target)target.textContent=game?liveDescription(game):"Live status unavailable";
-    updateElapsed();
-  updateGameFilters();
-  /* end of refresh */
   }
+  updateElapsed();
+  updateGameFilters();
 }
 setInterval(refreshLive,30000);
 
@@ -139,7 +138,7 @@ function updateElapsed(){
   }
 }
 setInterval(updateElapsed,15000);
-const gameObserver=new MutationObserver(()=>{updateGameFilters();updateElapsed()});
+const gameObserver=new MutationObserver(changes=>{if(changes.some(change=>[...change.addedNodes].some(n=>n.nodeType===1&&(n.classList?.contains("game")||n.classList?.contains("cards")||n.querySelector?.(".game"))))){updateGameFilters();updateElapsed()}});
 gameObserver.observe(document.getElementById("games"),{childList:true,subtree:true});
 updateGameFilters();
 
