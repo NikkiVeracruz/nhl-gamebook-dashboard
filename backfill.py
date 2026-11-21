@@ -4,7 +4,7 @@ import json, os, sys, time
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 import requests
-from monitor import games_on, get_games, HEADERS
+from monitor import get_games, HEADERS
 
 LEAGUE = os.environ["ARCHIVE_LEAGUE"]
 START = {"nba":"2025-09-01","nhl":"2025-09-01","mlb":"2025-02-01"}[LEAGUE]
