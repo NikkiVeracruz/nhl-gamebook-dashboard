@@ -1,12 +1,12 @@
 {
   "window_label": "Nov 20, 2026 – Nov 21, 2026 (ET; 3 AM rollover)",
-  "updated_at": "2026-11-21T23:29:18.124034+00:00",
+  "updated_at": "2026-11-21T23:58:21.212295+00:00",
   "games": [
     {
       "id": "2026020360",
       "date": "2026-11-21",
       "label": "Blackhawks @ Flames",
-      "status": "FINAL",
+      "status": "OFF",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020360.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020360.HTM"
     },
@@ -14,19 +14,19 @@
       "id": "2026020364",
       "date": "2026-11-21",
       "label": "Blue Jackets @ Maple Leafs",
-      "status": "FUT"
+      "status": "PRE"
     },
     {
       "id": "2026020363",
       "date": "2026-11-21",
       "label": "Capitals @ Bruins",
-      "status": "FUT"
+      "status": "PRE"
     },
     {
       "id": "2026020368",
       "date": "2026-11-21",
       "label": "Devils @ Blues",
-      "status": "FUT"
+      "status": "PRE"
     },
     {
       "id": "2026020370",
@@ -38,25 +38,25 @@
       "id": "2026020365",
       "date": "2026-11-21",
       "label": "Flyers @ Canadiens",
-      "status": "FUT"
+      "status": "PRE"
     },
     {
       "id": "2026020369",
       "date": "2026-11-21",
       "label": "Golden Knights @ Jets",
-      "status": "FUT"
+      "status": "PRE"
     },
     {
       "id": "2026020367",
       "date": "2026-11-21",
       "label": "Islanders @ Red Wings",
-      "status": "FUT"
+      "status": "PRE"
     },
     {
       "id": "2026020366",
       "date": "2026-11-21",
       "label": "Kings @ Senators",
-      "status": "FUT"
+      "status": "PRE"
     },
     {
       "id": "2026020372",
