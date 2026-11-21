@@ -2,7 +2,7 @@ name: Backfill NHL Historical Archive
 on:
   workflow_dispatch:
   schedule:
-    - cron: "27 * * * *"
+    - cron: "8,23,38,53 * * * *"
 permissions:
   contents: write
 concurrency:
