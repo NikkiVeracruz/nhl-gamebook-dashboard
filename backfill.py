@@ -11,7 +11,8 @@ START = {"nba":"2025-09-01","nhl":"2025-09-01","mlb":"2025-02-01"}[LEAGUE]
 ARCHIVE = Path("archive.json")
 CURSOR = Path("archive-progress.json")
 END = date.today()
-BATCH = 3
+BATCH = 120
+MAX_SECONDS = 8 * 60
 def main():
     previous = json.loads(ARCHIVE.read_text()) if ARCHIVE.exists() else {"games":[]}
     records = {str(g.get("id") or g.get("slug") or (g.get("date"),g.get("label"))):g for g in previous.get("games",[])}
@@ -20,7 +21,8 @@ def main():
     session = requests.Session()
     session.headers.update(HEADERS)
     processed = 0
-    while day <= END and processed < BATCH:
+    started = time.monotonic()
+    while day <= END and processed < BATCH and (processed == 0 or time.monotonic() - started < MAX_SECONDS):
         try:
             if LEAGUE == "mlb":
                 response=session.get("https://statsapi.mlb.com/api/v1/schedule",params={"sportId":1,"date":day.isoformat(),"hydrate":"team","gameTypes":"S,R,F,D,L,W"},timeout=25)
