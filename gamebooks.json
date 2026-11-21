@@ -1,6 +1,6 @@
 {
   "window_label": "Nov 20, 2026 – Nov 21, 2026 (ET; 3 AM rollover)",
-  "updated_at": "2026-11-21T21:33:40.516621+00:00",
+  "updated_at": "2026-11-21T22:19:34.205761+00:00",
   "games": [
     {
       "id": "2026020360",
@@ -68,7 +68,7 @@
       "id": "2026020359",
       "date": "2026-11-21",
       "label": "Oilers @ Hurricanes",
-      "status": "FINAL",
+      "status": "OFF",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020359.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020359.HTM"
     },

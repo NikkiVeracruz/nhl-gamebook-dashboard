@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-21T21:43:53.122528+00:00",
+  "updated_at": "2026-11-21T22:19:34.254131+00:00",
   "games": [
     {
       "id": "2026020371",
@@ -23,7 +23,7 @@
       "id": "2026020359",
       "date": "2026-11-21",
       "label": "Oilers @ Hurricanes",
-      "status": "FINAL",
+      "status": "OFF",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020359.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020359.HTM"
     },
