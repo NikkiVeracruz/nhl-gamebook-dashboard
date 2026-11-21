@@ -1,12 +1,12 @@
 {
   "window_label": "Nov 20, 2026 – Nov 21, 2026 (ET; 3 AM rollover)",
-  "updated_at": "2026-11-21T19:29:51.280248+00:00",
+  "updated_at": "2026-11-21T20:14:59.497256+00:00",
   "games": [
     {
       "id": "2026020360",
       "date": "2026-11-21",
       "label": "Blackhawks @ Flames",
-      "status": "FUT"
+      "status": "PRE"
     },
     {
       "id": "2026020364",
