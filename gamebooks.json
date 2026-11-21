@@ -1,6 +1,6 @@
 {
   "window_label": "Nov 20, 2026 – Nov 21, 2026 (ET; 3 AM rollover)",
-  "updated_at": "2026-11-21T17:13:20.766057+00:00",
+  "updated_at": "2026-11-21T17:55:20.132309+00:00",
   "games": [
     {
       "id": "2026020360",
@@ -66,7 +66,7 @@
       "id": "2026020359",
       "date": "2026-11-21",
       "label": "Oilers @ Hurricanes",
-      "status": "FUT"
+      "status": "PRE"
     },
     {
       "id": "2026020362",
