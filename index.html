@@ -170,38 +170,7 @@ updateGameFilters();
   ["archive-search","archive-team","archive-year","archive-status"].forEach(id=>$a(id).addEventListener(id==="archive-search"?"input":"change",renderArchive));
   fetch("./archive.json?t="+Date.now(),{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("Archive unavailable");return r.json()}).then(d=>{
     records=Array.isArray(d.games)?d.games:[];
-    const teamNames=new Set(),years=new Set();const nflTeams="Cardinals Falcons Ravens Bills Panthers Bears Bengals Browns Cowboys Broncos Lions Packers Texans Colts Jaguars Chiefs Raiders Chargers Rams Dolphins Vikings Patriots Saints Giants Jets Eagles Steelers 49ers Seahawks Buccaneers Titans Commanders".split(" ");for(const g of records){years.add(String(seasonOf(g.date)).slice(0,4));const label=String(g.label||"");if(league==="NFL"){for(const name of nflTeams)if(new RegExp("\\b"+name+"\\b","i").test(label))teamNames.add(name)}else{for(const side of label.split(/\s+@\s+|\s+at\s+/i)){const name=side.split(",")[0].trim();if(name)teamNames.add(name)}}}for(const name of [...teamNames].sort())$a("archive-team").add(new Option(name,name));for(const year of [...years].filter(Boolean).sort().reverse())$a("archive-year").add(new Option(year,year));
-    renderArchive();
-  }).catch(()=>{$a("archive-count").textContent="Archive feed is not available yet."});
-})();
-</script><script>const ARCHIVE_LEAGUE="NHL";
-// Historical archive uses its own data file, input controls, and DOM container.
-// It never changes the current-game search or #games contents.
-(function(){
-  const league=ARCHIVE_LEAGUE;
-  const $a=id=>document.getElementById(id);
-  const safe=u=>{try{const v=new URL(u);return v.protocol==="https:"?v.href:null}catch{return null}};
-  const seasonOf=date=>{const year=Number(String(date).slice(0,4)),month=Number(String(date).slice(5,7));if(!year)return "Unknown";return league==="NBA"||league==="NHL"||league==="NFL"?(month>=7?year:year-1)+"–"+String((month>=7?year+1:year)%100).padStart(2,"0"):String(year)};
-  const reportLinks=g=>{const fields=[["pdf_url","Official gamebook"],["gs_url","Game Summary"],["es_url","Event Summary"],["box_url","Box score"],["plays_url","Play-by-play"],["play_url","Play-by-play"]];return fields.map(([key,label])=>({url:safe(g[key]),label})).filter(x=>x.url)};
-  let records=[];
-  function renderArchive(){
-    const q=$a("archive-search").value.toLowerCase().trim(),season=$a("archive-season").value,status=$a("archive-status").value;
-    const filtered=records.filter(g=>(!q||String(g.label||"").toLowerCase().includes(q))&&(season==="all"||seasonOf(g.date)===season)&&(status==="all"||(reportLinks(g).length>0)===(status==="available")));
-    const holder=$a("archive-results");holder.replaceChildren();
-    $a("archive-count").textContent=filtered.length+" archived games found"+(filtered.length>200?" · showing newest 200":"");
-    for(const g of filtered.slice(0,200)){
-      const card=document.createElement("article");card.className="archive-game";
-      const title=document.createElement("strong");title.textContent=g.label||"Game";card.append(title);
-      const date=document.createElement("p");date.className="muted";date.textContent=(g.date||"")+" · "+seasonOf(g.date);card.append(date);
-      const links=reportLinks(g);
-      if(!links.length){const missing=document.createElement("p");missing.className="muted";missing.textContent="Report not yet archived";card.append(missing)}
-      for(const link of links){const a=document.createElement("a");a.href=link.url;a.target="_blank";a.rel="noopener noreferrer";a.textContent=link.label;card.append(a)}
-      holder.append(card);
-    }
-  }
-  ["archive-search","archive-season","archive-status"].forEach(id=>$a(id).addEventListener(id==="archive-search"?"input":"change",renderArchive));
-  fetch("./archive.json?t="+Date.now(),{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("Archive unavailable");return r.json()}).then(d=>{
-    records=Array.isArray(d.games)?d.games:[];
+    const years=new Set(records.map(g=>String(seasonOf(g.date)).slice(0,4)));const teamNames=["Avalanche","Blackhawks","Blue Jackets","Blues","Bruins","Canadiens","Canucks","Capitals","Devils","Ducks","Flames","Flyers","Golden Knights","Hurricanes","Islanders","Jets","Kings","Kraken","Lightning","Mammoth","Maple Leafs","Oilers","Panthers","Penguins","Predators","Rangers","Red Wings","Sabres","Senators","Sharks","Stars","Wild"];for(const name of teamNames)$a("archive-team").add(new Option(name,name));for(const year of [...years].filter(Boolean).sort().reverse())$a("archive-year").add(new Option(year,year));
     const seasons=[...new Set(records.map(g=>seasonOf(g.date)))].sort().reverse();
     for(const s of seasons){const opt=document.createElement("option");opt.value=s;opt.textContent=s;$a("archive-season").append(opt)}
     renderArchive();
