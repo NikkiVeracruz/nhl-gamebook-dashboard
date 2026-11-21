@@ -171,9 +171,7 @@ updateGameFilters();
   fetch("./archive.json?t="+Date.now(),{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("Archive unavailable");return r.json()}).then(d=>{
     records=Array.isArray(d.games)?d.games:[];
     const years=new Set(records.map(g=>String(seasonOf(g.date)).slice(0,4)));const teamNames=["Avalanche","Blackhawks","Blue Jackets","Blues","Bruins","Canadiens","Canucks","Capitals","Devils","Ducks","Flames","Flyers","Golden Knights","Hurricanes","Islanders","Jets","Kings","Kraken","Lightning","Mammoth","Maple Leafs","Oilers","Panthers","Penguins","Predators","Rangers","Red Wings","Sabres","Senators","Sharks","Stars","Wild"];for(const name of teamNames)$a("archive-team").add(new Option(name,name));for(const year of [...years].filter(Boolean).sort().reverse())$a("archive-year").add(new Option(year,year));
-    const seasons=[...new Set(records.map(g=>seasonOf(g.date)))].sort().reverse();
-    for(const s of seasons){const opt=document.createElement("option");opt.value=s;opt.textContent=s;$a("archive-season").append(opt)}
-    renderArchive();
+renderArchive();
   }).catch(()=>{$a("archive-count").textContent="Archive feed is not available yet."});
 })();
 </script></body></html>
