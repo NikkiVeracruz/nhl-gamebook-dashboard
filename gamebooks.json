@@ -1,12 +1,14 @@
 {
   "window_label": "Nov 20, 2026 – Nov 21, 2026 (ET; 3 AM rollover)",
-  "updated_at": "2026-11-21T20:14:59.497256+00:00",
+  "updated_at": "2026-11-21T20:57:09.604418+00:00",
   "games": [
     {
       "id": "2026020360",
       "date": "2026-11-21",
       "label": "Blackhawks @ Flames",
-      "status": "PRE"
+      "status": "LIVE",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020360.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020360.HTM"
     },
     {
       "id": "2026020364",
@@ -66,7 +68,7 @@
       "id": "2026020359",
       "date": "2026-11-21",
       "label": "Oilers @ Hurricanes",
-      "status": "LIVE",
+      "status": "FINAL",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020359.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020359.HTM"
     },
