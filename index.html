@@ -1,3 +1,70 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NHL Gamebook Center</title><style>:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color-scheme:dark;background:#0d1422;color:#f4f7fb}body{margin:0}main{max-width:1040px;margin:auto;padding:30px 20px}h1{font-size:2rem;margin:0}h2{font-size:1.15rem}.muted{color:#a7b6cc}header{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}.pill{border:1px solid #475569;border-radius:24px;padding:8px 12px;font-size:.83rem}.day{margin:28px 0 12px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px}.game{border:1px solid #35445a;background:#182438;border-radius:14px;padding:18px}.game p{margin:9px 0}.button{display:inline-block;border-radius:9px;background:#d9eaff;color:#102035;text-decoration:none;font-weight:700;padding:10px 12px;margin:7px 7px 0 0}.waiting{color:#cbd5e1;font-size:.9rem}.notice{padding:12px 0;color:#d4dfed}footer{margin-top:35px;color:#a7b6cc;font-size:.85rem}a:focus-visible{outline:3px solid #8cb8ff;outline-offset:3px}</style></head><body><main><header><div><h1>NHL Gamebook Center</h1><p class="muted">Official NHL Game Summary &amp; Event Summary reports</p></div><span id="updated" class="pill">Awaiting first update</span></header><p id="window" class="muted"></p><div id="games" aria-live="polite"><p class="notice">Loading NHL games…</p></div><footer>Unofficial resource. Links open official NHL-hosted HTML reports. The reporting day changes at 3:00 AM Eastern.</footer></main><script>
-const root=document.getElementById('games');function node(tag,cls,text){const x=document.createElement(tag);if(cls)x.className=cls;if(text!==undefined)x.textContent=text;return x}async function load(){try{const r=await fetch('./gamebooks.json?t='+Date.now(),{cache:'no-store'});if(!r.ok)throw Error('Could not load');const d=await r.json();document.getElementById('updated').textContent=d.updated_at?'Updated '+new Date(d.updated_at).toLocaleString():'Awaiting first update';document.getElementById('window').textContent=d.window_label||'';root.replaceChildren();if(d.offseason){root.append(node('p','notice','Offseason — monitoring resumes automatically for preseason.'));return}if(d.warning)root.append(node('p','notice',d.warning));const games=Array.isArray(d.games)?d.games:[];if(!games.length){root.append(node('p','notice','No games listed yet. The first monitoring run may still be pending.'));return}const groups=new Map();for(const g of games){if(!groups.has(g.date))groups.set(g.date,[]);groups.get(g.date).push(g)}for(const [date,items] of groups){root.append(node('h2','day',new Date(date+'T12:00:00Z').toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',timeZone:'UTC'})));const cards=node('section','cards');for(const g of items){const card=node('article','game');card.append(node('h2','',g.label||'NHL game'));if(g.status)card.append(node('p','muted',g.status));let count=0;for(const [key,label] of [['gs_url','Game Summary'],['es_url','Event Summary']]){if(g[key]&&/^https:\/\/www\.nhl\.com\/scores\/htmlreports\//i.test(g[key])){const a=node('a','button',label);a.href=g[key];a.target='_blank';a.rel='noopener noreferrer';card.append(a);count++}}if(!count)card.append(node('p','waiting','Awaiting official reports'));cards.append(card)}root.append(cards)}}catch(e){root.replaceChildren(node('p','notice','Dashboard data is unavailable. Please try again shortly.'))}}load();setInterval(load,300000);
+const root=document.getElementById('games');function node(tag,cls,text){const x=document.createElement(tag);if(cls)x.className=cls;if(text!==undefined)x.textContent=text;return x}async function load(){try{const r=await fetch('./gamebooks.json?t='+Date.now(),{cache:'no-store'});if(!r.ok)throw Error('Could not load');const d=await r.json();document.getElementById('updated').textContent=d.updated_at?'Updated '+new Date(d.updated_at).toLocaleString():'Awaiting first update';document.getElementById('window').textContent=d.window_label||'';root.replaceChildren();if(d.offseason){root.append(node('p','notice','Offseason — monitoring resumes automatically for preseason.'));return}if(d.warning)root.append(node('p','notice',d.warning));const games=Array.isArray(d.games)?d.games:[];if(!games.length){root.append(node('p','notice','No games listed yet. The first monitoring run may still be pending.'));return}const groups=new Map();for(const g of games){if(!groups.has(g.date))groups.set(g.date,[]);groups.get(g.date).push(g)}for(const [date,items] of groups){root.append(node('h2','day',new Date(date+'T12:00:00Z').toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',timeZone:'UTC'})));const cards=node('section','cards');for(const g of items){const card=node('article','game');card.append(node('h2','',g.label||'NHL game'));if(g.status)card.append(node('p','muted',g.status));let count=0;for(const [key,label] of [['gs_url','Game Summary'],['es_url','Event Summary']]){if(g[key]&&/^https:\/\/www\.nhl\.com\/scores\/htmlreports\//i.test(g[key])){const a=node('a','button',label);a.href=g[key];a.target='_blank';a.rel='noopener noreferrer';card.append(a);count++}}if(!count)card.append(node('p','waiting','Awaiting official reports'));card.dataset.gameDate=g.date||"";card.dataset.gameLabel=g.label||"";card.append(node('p','muted live-status','Checking live status…'));cards.append(card)}root.append(cards)}}catch(e){root.replaceChildren(node('p','notice','Dashboard data is unavailable. Please try again shortly.'))}}load().then(refreshLive);setInterval(()=>load().then(refreshLive),300000);
+
+/* Live scores are independent of the slower official-report publishing workflow.
+   ESPN's public scoreboard is an unofficial, best-effort live status source. */
+const LIVE_SPORT="hockey/nhl";
+const liveCache=new Map();
+const normalizeTeam=s=>String(s||"").toLowerCase().replace(/[^a-z0-9]/g,"");
+function teamMatches(text,team){
+  const name=normalizeTeam(text);
+  const options=[team?.displayName,team?.name,team?.shortDisplayName].filter(Boolean).map(normalizeTeam);
+  return options.some(x=>x.length>=4&&(name===x||name.includes(x)));
+}
+function matchEvent(card,event){
+  const comp=event.competitions?.[0];
+  if(!comp)return false;
+  const home=comp.competitors?.find(t=>t.homeAway==="home")?.team;
+  const away=comp.competitors?.find(t=>t.homeAway==="away")?.team;
+  const label=card.dataset.gameLabel||"";
+  const halves=label.split(/\s+@\s+/);
+  if(halves.length===2)return teamMatches(halves[0],away)&&teamMatches(halves[1],home);
+  return teamMatches(label,away)&&teamMatches(label,home);
+}
+function liveDescription(event){
+  const s=event.status||{},type=s.type||{};
+  const comp=event.competitions?.[0],teams=comp?.competitors||[];
+  const away=teams.find(t=>t.homeAway==="away"),home=teams.find(t=>t.homeAway==="home");
+  const state=type.state||"pre";
+  let status=type.shortDetail||type.description||"Scheduled";
+  if(state==="in"){
+    if(LIVE_SPORT==="baseball/mlb"){
+      status=type.shortDetail||type.detail||("Inning "+(s.period||""));
+    }else if(s.displayClock&&s.displayClock!=="0.0"&&s.displayClock!=="0:00"){
+      const unit=LIVE_SPORT==="hockey/nhl"?"P":"Q";
+      status=unit+(s.period||"")+" — "+s.displayClock;
+    }
+    status="LIVE · "+status;
+  }
+  const score=(away?.score!=null&&home?.score!=null)?(" · "+(away.team?.abbreviation||"Away")+" "+away.score+" – "+(home.team?.abbreviation||"Home")+" "+home.score):"";
+  return status+score;
+}
+async function refreshLive(){
+  const cards=[...document.querySelectorAll(".game[data-game-date]")];
+  if(!cards.length)return;
+  const dates=[...new Set(cards.map(c=>c.dataset.gameDate))];
+  const results=await Promise.all(dates.map(async day=>{
+    if(!/^\d{4}-\d{2}-\d{2}$/.test(day))return [];
+    const key=day;
+    if(liveCache.has(key)&&Date.now()-liveCache.get(key).time<25000)return liveCache.get(key).events;
+    try{
+      const url="https://site.api.espn.com/apis/site/v2/sports/"+LIVE_SPORT+"/scoreboard?dates="+day.replace(/-/g,"")+"&limit=100";
+      const response=await fetch(url,{cache:"no-store"});
+      if(!response.ok)throw Error("Scoreboard unavailable");
+      const events=(await response.json()).events||[];
+      liveCache.set(key,{time:Date.now(),events});
+      return events;
+    }catch(e){return liveCache.get(key)?.events||[]}
+  }));
+  const events=results.flat();
+  for(const card of cards){
+    const game=events.find(e=>e.date&&matchEvent(card,e)&&
+      new Intl.DateTimeFormat("en-CA",{timeZone:"America/New_York",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date(e.date))===card.dataset.gameDate)
+      ||events.find(e=>matchEvent(card,e)&&e.date?.slice(0,10)===card.dataset.gameDate);
+    const target=card.querySelector(".live-status");
+    if(target)target.textContent=game?liveDescription(game):"Live status unavailable";
+  }
+}
+setInterval(refreshLive,30000);
+
 </script></body></html>
