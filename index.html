@@ -154,9 +154,9 @@ updateGameFilters();
   let records=[];
   function renderArchive(){
     const q=$a("archive-search").value.toLowerCase().trim(),season=$a("archive-season").value,status=$a("archive-status").value;
-    const filtered=records.filter(g=>(!q||String(g.label||"").toLowerCase().includes(q))&&(season==="all"||seasonOf(g.date)===season)&&(status==="all"||(reportLinks(g).length>0)===(status==="available")));
+    const filtered=(!q ? [] : records.filter(g=>(!q||String(g.label||"").toLowerCase().includes(q))&&(season==="all"||seasonOf(g.date)===season)&&(status==="all"||(reportLinks(g).length>0)===(status==="available"))));
     const holder=$a("archive-results");holder.replaceChildren();
-    $a("archive-count").textContent=filtered.length+" archived games found"+(filtered.length>200?" · showing newest 200":"");
+    $a("archive-count").textContent=(!q ? "Enter a team or matchup to search the archive." : filtered.length+" archived games found")+(filtered.length>200?" · showing newest 200":"");
     for(const g of filtered.slice(0,200)){
       const card=document.createElement("article");card.className="archive-game";
       const title=document.createElement("strong");title.textContent=g.label||"Game";card.append(title);
