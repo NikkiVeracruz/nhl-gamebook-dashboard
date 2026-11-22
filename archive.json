@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-22T01:39:48.200778+00:00",
+  "updated_at": "2026-11-22T02:12:23.692498+00:00",
   "games": [
     {
       "id": "2026020374",
@@ -41,7 +41,7 @@
       "id": "2026020361",
       "date": "2026-11-21",
       "label": "Sabres @ Panthers",
-      "status": "FINAL",
+      "status": "OFF",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020361.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020361.HTM"
     },
@@ -49,7 +49,7 @@
       "id": "2026020362",
       "date": "2026-11-21",
       "label": "Penguins @ Predators",
-      "status": "FINAL",
+      "status": "OFF",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020362.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020362.HTM"
     },
@@ -103,7 +103,9 @@
       "id": "2026020370",
       "date": "2026-11-21",
       "label": "Ducks @ Mammoth",
-      "status": "PRE"
+      "status": "LIVE",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020370.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020370.HTM"
     },
     {
       "id": "2026020368",
