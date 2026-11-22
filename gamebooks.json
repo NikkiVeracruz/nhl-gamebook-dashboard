@@ -1,6 +1,6 @@
 {
-  "window_label": "Nov 20, 2026 – Nov 21, 2026 (ET; 3 AM rollover)",
-  "updated_at": "2026-11-22T07:48:53.368096+00:00",
+  "window_label": "Nov 21, 2026 – Nov 22, 2026 (ET; 3 AM rollover)",
+  "updated_at": "2026-11-22T08:37:56.070635+00:00",
   "games": [
     {
       "id": "2026020360",
@@ -113,6 +113,36 @@
       "status": "OFF",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020371.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020371.HTM"
+    },
+    {
+      "id": "2026020377",
+      "date": "2026-11-22",
+      "label": "Blackhawks @ Canucks",
+      "status": "FUT"
+    },
+    {
+      "id": "2026020373",
+      "date": "2026-11-22",
+      "label": "Hurricanes @ Rangers",
+      "status": "FUT"
+    },
+    {
+      "id": "2026020375",
+      "date": "2026-11-22",
+      "label": "Oilers @ Blues",
+      "status": "FUT"
+    },
+    {
+      "id": "2026020376",
+      "date": "2026-11-22",
+      "label": "Penguins @ Stars",
+      "status": "FUT"
+    },
+    {
+      "id": "2026020374",
+      "date": "2026-11-22",
+      "label": "Sabres @ Lightning",
+      "status": "FUT"
     }
   ]
 }
