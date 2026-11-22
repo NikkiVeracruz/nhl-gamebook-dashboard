@@ -110,6 +110,24 @@ def main():
             failures.append("partial schedule: " + ", ".join(g["date"] for g in missing))
     except (OSError, ValueError, KeyError, TypeError):
         pass
+    # Preserve links verified in a previous successful run if the official host
+    # temporarily fails. Only restore the exact expected official URL for the
+    # same game ID and date; never accept arbitrary URLs from old data.
+    try:
+        previous_data = json.loads(OUT.read_text(encoding="utf-8"))
+        prior_by_id = {str(g.get("id")): g for g in previous_data.get("games", [])
+                       if isinstance(g, dict) and g.get("id")}
+        for game in games:
+            old = prior_by_id.get(str(game.get("id")))
+            if not old or old.get("date") != game.get("date"):
+                continue
+            for kind, key in (("GS", "gs_url"), ("ES", "es_url")):
+                expected_url = report_url(game["id"], kind)
+                if not game.get(key) and old.get(key) == expected_url:
+                    game[key] = expected_url
+                    LOG.warning("Retained previously verified NHL %s report for %s", kind, game["id"])
+    except (OSError, ValueError, TypeError, KeyError, AttributeError) as exc:
+        LOG.warning("Could not restore previously verified report links: %s", exc)
     games.sort(key=lambda g: (g["date"], g["label"]))
     data = {"window_label": f"{days[0]:%b %d, %Y} – {days[1]:%b %d, %Y} (ET; 3 AM rollover)",
             "updated_at": datetime.now(timezone.utc).isoformat(), "games": games}
