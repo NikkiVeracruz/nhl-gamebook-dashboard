@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-22T17:23:56.377870+00:00",
+  "updated_at": "2026-11-22T17:59:45.290635+00:00",
   "games": [
     {
       "id": "2026020374",
@@ -23,7 +23,9 @@
       "id": "2026020373",
       "date": "2026-11-22",
       "label": "Hurricanes @ Rangers",
-      "status": "PRE"
+      "status": "LIVE",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020373.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020373.HTM"
     },
     {
       "id": "2026020377",
