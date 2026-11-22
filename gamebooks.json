@@ -1,6 +1,6 @@
 {
   "window_label": "Nov 20, 2026 – Nov 21, 2026 (ET; 3 AM rollover)",
-  "updated_at": "2026-11-22T02:12:23.640050+00:00",
+  "updated_at": "2026-11-22T02:56:22.781530+00:00",
   "games": [
     {
       "id": "2026020360",
@@ -14,7 +14,7 @@
       "id": "2026020364",
       "date": "2026-11-21",
       "label": "Blue Jackets @ Maple Leafs",
-      "status": "LIVE",
+      "status": "FINAL",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020364.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020364.HTM"
     },
@@ -22,7 +22,7 @@
       "id": "2026020363",
       "date": "2026-11-21",
       "label": "Capitals @ Bruins",
-      "status": "LIVE",
+      "status": "FINAL",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020363.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020363.HTM"
     },
@@ -30,7 +30,7 @@
       "id": "2026020368",
       "date": "2026-11-21",
       "label": "Devils @ Blues",
-      "status": "LIVE",
+      "status": "FINAL",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020368.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020368.HTM"
     },
@@ -46,7 +46,7 @@
       "id": "2026020365",
       "date": "2026-11-21",
       "label": "Flyers @ Canadiens",
-      "status": "LIVE",
+      "status": "FINAL",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020365.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020365.HTM"
     },
@@ -54,7 +54,7 @@
       "id": "2026020369",
       "date": "2026-11-21",
       "label": "Golden Knights @ Jets",
-      "status": "LIVE",
+      "status": "CRIT",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020369.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020369.HTM"
     },
@@ -62,7 +62,7 @@
       "id": "2026020367",
       "date": "2026-11-21",
       "label": "Islanders @ Red Wings",
-      "status": "LIVE",
+      "status": "FINAL",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020367.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020367.HTM"
     },
@@ -70,7 +70,7 @@
       "id": "2026020366",
       "date": "2026-11-21",
       "label": "Kings @ Senators",
-      "status": "LIVE",
+      "status": "FINAL",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020366.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020366.HTM"
     },
@@ -78,7 +78,7 @@
       "id": "2026020372",
       "date": "2026-11-21",
       "label": "Kraken @ Sharks",
-      "status": "FUT"
+      "status": "PRE"
     },
     {
       "id": "2026020359",
@@ -108,7 +108,7 @@
       "id": "2026020371",
       "date": "2026-11-21",
       "label": "Wild @ Canucks",
-      "status": "FUT"
+      "status": "PRE"
     }
   ]
 }
