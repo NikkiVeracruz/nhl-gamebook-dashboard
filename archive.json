@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-21T23:58:21.271032+00:00",
+  "updated_at": "2026-11-22T00:15:35.490747+00:00",
   "games": [
     {
       "id": "2026020371",
@@ -92,6 +92,310 @@
       "status": "OFF",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020360.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020360.HTM"
+    },
+    {
+      "id": "2025030416",
+      "date": "2026-06-14",
+      "label": "Hurricanes @ Golden Knights",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20252026/GS030416.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20252026/ES030416.HTM"
+    },
+    {
+      "id": "2025030415",
+      "date": "2026-06-11",
+      "label": "Golden Knights @ Hurricanes",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20252026/GS030415.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20252026/ES030415.HTM"
+    },
+    {
+      "id": "2025030414",
+      "date": "2026-06-09",
+      "label": "Hurricanes @ Golden Knights",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20252026/GS030414.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20252026/ES030414.HTM"
+    },
+    {
+      "id": "2025030413",
+      "date": "2026-06-06",
+      "label": "Hurricanes @ Golden Knights",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20252026/GS030413.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20252026/ES030413.HTM"
+    },
+    {
+      "id": "2025030412",
+      "date": "2026-06-04",
+      "label": "Golden Knights @ Hurricanes",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20252026/GS030412.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20252026/ES030412.HTM"
+    },
+    {
+      "id": "2025030411",
+      "date": "2026-06-02",
+      "label": "Golden Knights @ Hurricanes",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20252026/GS030411.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20252026/ES030411.HTM"
+    },
+    {
+      "id": "2025030315",
+      "date": "2026-05-29",
+      "label": "Canadiens @ Hurricanes",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20252026/GS030315.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20252026/ES030315.HTM"
+    },
+    {
+      "id": "2025030314",
+      "date": "2026-05-27",
+      "label": "Hurricanes @ Canadiens",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20252026/GS030314.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20252026/ES030314.HTM"
+    },
+    {
+      "id": "2025030324",
+      "date": "2026-05-26",
+      "label": "Avalanche @ Golden Knights",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20252026/GS030324.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20252026/ES030324.HTM"
+    },
+    {
+      "id": "2025030313",
+      "date": "2026-05-25",
+      "label": "Hurricanes @ Canadiens",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20252026/GS030313.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20252026/ES030313.HTM"
+    },
+    {
+      "id": "2025030323",
+      "date": "2026-05-24",
+      "label": "Avalanche @ Golden Knights",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20252026/GS030323.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20252026/ES030323.HTM"
+    },
+    {
+      "id": "2025030312",
+      "date": "2026-05-23",
+      "label": "Canadiens @ Hurricanes",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20252026/GS030312.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20252026/ES030312.HTM"
+    },
+    {
+      "id": "2025030322",
+      "date": "2026-05-22",
+      "label": "Golden Knights @ Avalanche",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20252026/GS030322.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20252026/ES030322.HTM"
+    },
+    {
+      "id": "2025030311",
+      "date": "2026-05-21",
+      "label": "Canadiens @ Hurricanes",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20252026/GS030311.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20252026/ES030311.HTM"
+    },
+    {
+      "id": "2025030321",
+      "date": "2026-05-20",
+      "label": "Golden Knights @ Avalanche",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20252026/GS030321.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20252026/ES030321.HTM"
+    },
+    {
+      "id": "2025030217",
+      "date": "2026-05-18",
+      "label": "Canadiens @ Sabres",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20252026/GS030217.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20252026/ES030217.HTM"
+    },
+    {
+      "id": "2025030216",
+      "date": "2026-05-16",
+      "label": "Sabres @ Canadiens",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20252026/GS030216.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20252026/ES030216.HTM"
+    },
+    {
+      "id": "2025030246",
+      "date": "2026-05-14",
+      "label": "Golden Knights @ Ducks",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20252026/GS030246.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20252026/ES030246.HTM"
+    },
+    {
+      "id": "2025030215",
+      "date": "2026-05-14",
+      "label": "Canadiens @ Sabres",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20252026/GS030215.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20252026/ES030215.HTM"
+    },
+    {
+      "id": "2025030235",
+      "date": "2026-05-13",
+      "label": "Wild @ Avalanche",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20252026/GS030235.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20252026/ES030235.HTM"
+    },
+    {
+      "id": "2025030214",
+      "date": "2026-05-12",
+      "label": "Sabres @ Canadiens",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20252026/GS030214.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20252026/ES030214.HTM"
+    },
+    {
+      "id": "2025030245",
+      "date": "2026-05-12",
+      "label": "Ducks @ Golden Knights",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20252026/GS030245.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20252026/ES030245.HTM"
+    },
+    {
+      "id": "2025030234",
+      "date": "2026-05-11",
+      "label": "Avalanche @ Wild",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20252026/GS030234.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20252026/ES030234.HTM"
+    },
+    {
+      "id": "2025030213",
+      "date": "2026-05-10",
+      "label": "Sabres @ Canadiens",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20252026/GS030213.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20252026/ES030213.HTM"
+    },
+    {
+      "id": "2025030244",
+      "date": "2026-05-10",
+      "label": "Golden Knights @ Ducks",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20252026/GS030244.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20252026/ES030244.HTM"
+    },
+    {
+      "id": "2025030224",
+      "date": "2026-05-09",
+      "label": "Hurricanes @ Flyers",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20252026/GS030224.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20252026/ES030224.HTM"
+    },
+    {
+      "id": "2025030233",
+      "date": "2026-05-09",
+      "label": "Avalanche @ Wild",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20252026/GS030233.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20252026/ES030233.HTM"
+    },
+    {
+      "id": "2025030243",
+      "date": "2026-05-08",
+      "label": "Golden Knights @ Ducks",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20252026/GS030243.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20252026/ES030243.HTM"
+    },
+    {
+      "id": "2025030212",
+      "date": "2026-05-08",
+      "label": "Canadiens @ Sabres",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20252026/GS030212.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20252026/ES030212.HTM"
+    },
+    {
+      "id": "2025030223",
+      "date": "2026-05-07",
+      "label": "Hurricanes @ Flyers",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20252026/GS030223.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20252026/ES030223.HTM"
+    },
+    {
+      "id": "2025030242",
+      "date": "2026-05-06",
+      "label": "Ducks @ Golden Knights",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20252026/GS030242.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20252026/ES030242.HTM"
+    },
+    {
+      "id": "2025030211",
+      "date": "2026-05-06",
+      "label": "Canadiens @ Sabres",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20252026/GS030211.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20252026/ES030211.HTM"
+    },
+    {
+      "id": "2025030232",
+      "date": "2026-05-05",
+      "label": "Wild @ Avalanche",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20252026/GS030232.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20252026/ES030232.HTM"
+    },
+    {
+      "id": "2025030222",
+      "date": "2026-05-04",
+      "label": "Flyers @ Hurricanes",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20252026/GS030222.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20252026/ES030222.HTM"
+    },
+    {
+      "id": "2025030241",
+      "date": "2026-05-04",
+      "label": "Ducks @ Golden Knights",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20252026/GS030241.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20252026/ES030241.HTM"
+    },
+    {
+      "id": "2025030231",
+      "date": "2026-05-03",
+      "label": "Wild @ Avalanche",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20252026/GS030231.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20252026/ES030231.HTM"
+    },
+    {
+      "id": "2025030127",
+      "date": "2026-05-03",
+      "label": "Canadiens @ Lightning",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20252026/GS030127.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20252026/ES030127.HTM"
+    },
+    {
+      "id": "2025030221",
+      "date": "2026-05-02",
+      "label": "Flyers @ Hurricanes",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20252026/GS030221.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20252026/ES030221.HTM"
     },
     {
       "id": "2025030116",
