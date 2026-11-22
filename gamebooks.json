@@ -1,6 +1,6 @@
 {
   "window_label": "Nov 21, 2026 – Nov 22, 2026 (ET; 3 AM rollover)",
-  "updated_at": "2026-11-22T21:45:32.358258+00:00",
+  "updated_at": "2026-11-22T22:29:30.877604+00:00",
   "games": [
     {
       "id": "2026020360",
@@ -144,7 +144,9 @@
       "id": "2026020374",
       "date": "2026-11-22",
       "label": "Sabres @ Lightning",
-      "status": "PRE"
+      "status": "LIVE",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020374.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020374.HTM"
     }
   ]
 }
