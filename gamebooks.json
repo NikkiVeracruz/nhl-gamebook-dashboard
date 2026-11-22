@@ -1,6 +1,6 @@
 {
   "window_label": "Nov 20, 2026 – Nov 21, 2026 (ET; 3 AM rollover)",
-  "updated_at": "2026-11-22T05:33:53.873786+00:00",
+  "updated_at": "2026-11-22T06:31:59.789116+00:00",
   "games": [
     {
       "id": "2026020360",
@@ -78,7 +78,7 @@
       "id": "2026020372",
       "date": "2026-11-21",
       "label": "Kraken @ Sharks",
-      "status": "LIVE",
+      "status": "OFF",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020372.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020372.HTM"
     },
@@ -110,7 +110,7 @@
       "id": "2026020371",
       "date": "2026-11-21",
       "label": "Wild @ Canucks",
-      "status": "CRIT",
+      "status": "OFF",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020371.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020371.HTM"
     }
