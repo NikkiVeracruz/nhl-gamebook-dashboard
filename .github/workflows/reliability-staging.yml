@@ -1,0 +1,19 @@
+name: Read-only reliability checks (staging)
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - staging-reliability
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Validate code, published JSON and dashboard references
+        run: python tests/reliability_check.py
