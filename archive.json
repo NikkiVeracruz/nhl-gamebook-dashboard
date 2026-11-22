@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-22T23:22:32.833057+00:00",
+  "updated_at": "2026-11-22T23:59:58.111627+00:00",
   "games": [
     {
       "id": "2026020374",
@@ -13,13 +13,13 @@
       "id": "2026020376",
       "date": "2026-11-22",
       "label": "Penguins @ Stars",
-      "status": "FUT"
+      "status": "PRE"
     },
     {
       "id": "2026020375",
       "date": "2026-11-22",
       "label": "Oilers @ Blues",
-      "status": "FUT"
+      "status": "PRE"
     },
     {
       "id": "2026020373",

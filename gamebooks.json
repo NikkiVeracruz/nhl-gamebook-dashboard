@@ -1,6 +1,6 @@
 {
   "window_label": "Nov 21, 2026 – Nov 22, 2026 (ET; 3 AM rollover)",
-  "updated_at": "2026-11-22T23:21:43.028212+00:00",
+  "updated_at": "2026-11-22T23:59:58.051235+00:00",
   "games": [
     {
       "id": "2026020360",
@@ -132,13 +132,13 @@
       "id": "2026020375",
       "date": "2026-11-22",
       "label": "Oilers @ Blues",
-      "status": "FUT"
+      "status": "PRE"
     },
     {
       "id": "2026020376",
       "date": "2026-11-22",
       "label": "Penguins @ Stars",
-      "status": "FUT"
+      "status": "PRE"
     },
     {
       "id": "2026020374",
