@@ -1,6 +1,6 @@
 {
   "window_label": "Nov 21, 2026 – Nov 22, 2026 (ET; 3 AM rollover)",
-  "updated_at": "2026-11-22T20:24:33.614473+00:00",
+  "updated_at": "2026-11-22T21:05:54.408433+00:00",
   "games": [
     {
       "id": "2026020360",
@@ -124,7 +124,7 @@
       "id": "2026020373",
       "date": "2026-11-22",
       "label": "Hurricanes @ Rangers",
-      "status": "FINAL",
+      "status": "OFF",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020373.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020373.HTM"
     },
