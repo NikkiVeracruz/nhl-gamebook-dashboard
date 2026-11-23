@@ -98,6 +98,10 @@ def build_archive(live, previous, now=None):
 
 
 def atomic_write_json(path, output):
+    # Forward-only policy applies to the tracked production archive exclusively;
+    # temporary regression fixtures and legacy restoration code remain intact.
+    from forward_only import filter_archive
+    output = filter_archive(path, output)
     serialized = json.dumps(output, indent=2, ensure_ascii=False) + "\n"
     # Serialize and parse before replacing anything.
     json.loads(serialized)
