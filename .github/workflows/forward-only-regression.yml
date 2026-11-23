@@ -1,0 +1,33 @@
+name: Forward-only retention regression tests
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - forward_only.py
+      - archive.py
+      - three_day_window.py
+      - monitor.py
+      - tests/test_forward_only.py
+      - .github/workflows/forward-only-regression.yml
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Install existing dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Verify source code compiles
+        run: python -m py_compile archive.py forward_only.py monitor.py
+      - name: Verify forward-only complete-data policy
+        run: python -m unittest discover -s tests -p 'test_forward_only.py' -v
+      - name: Verify previous archive safety protections still pass
+        run: python -m unittest discover -s tests -p 'test_archive_safety.py' -v
+      - name: Test three-day rolling behavior
+        run: python -m unittest discover -s tests -p 'test_three_day_window.py' -v
