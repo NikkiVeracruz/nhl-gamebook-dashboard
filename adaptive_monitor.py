@@ -10,6 +10,7 @@ import os
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
+from competition_policy import nhl_game
 
 ET = ZoneInfo("America/New_York")
 SETTINGS = {
@@ -58,7 +59,7 @@ def reports_missing(game, league):
     if league in ("NBA", "WNBA"):
         return not game.get("pdf_url")
     if league == "NHL":
-        return not (game.get("gs_url") and game.get("es_url"))
+        return nhl_game(game.get("id")) and not (game.get("gs_url") and game.get("es_url"))
     return not ((game.get("box_url") or game.get("boxscore_url")) and
                 (game.get("plays_url") or game.get("play_url") or
                  game.get("playbyplay_url")))
@@ -121,7 +122,7 @@ def fetch_days(league, today, session=None, horizon=LOOKAHEAD):
             games = response.json().get("games")
             if not isinstance(games, list):
                 raise ValueError(f"Malformed NHL schedule: {day}")
-            if games:
+            if any(nhl_game(g.get("id")) for g in games if isinstance(g, dict)):
                 days.add(day)
         else:
             response = session.get(
@@ -145,7 +146,8 @@ def fetch_days(league, today, session=None, horizon=LOOKAHEAD):
             except (KeyError, TypeError, ValueError):
                 continue
             if today - timedelta(days=1) <= d <= end:
-                days.add(d)
+                if league != "NHL" or nhl_game(game.get("id")):
+                    days.add(d)
     return days
 
 
