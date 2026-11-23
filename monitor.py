@@ -7,7 +7,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 import requests
 import archive as archive_module
-from three_day_window import three_days, archive_outgoing_games
+from three_day_window import three_days, archive_outgoing_games, scheduled_games_in_window
 
 ET = ZoneInfo("America/New_York")
 OUT = Path("gamebooks.json")
@@ -90,7 +90,7 @@ def main():
     # Seasonal guard: keep the website live but avoid report scraping in the offseason.
     # Broad calendar boundaries allow preseason and late postseason games; the
     # schedule source itself determines which games actually appear.
-    if datetime.now(ET).month not in [9,10,11,12,1,2,3,4,5,6] and not __import__("adaptive_monitor").should_poll("NHL"):
+    if datetime.now(ET).month not in [9,10,11,12,1,2,3,4,5,6] and not scheduled_games_in_window("league-calendar.json", days) and not __import__("adaptive_monitor").should_poll("NHL"):
         now = datetime.now(timezone.utc).isoformat()
         write_if_changed(OUT, {"window_label": f"{days[0]:%b %d, %Y} – {days[-1]:%b %d, %Y} (ET; 3 AM rollover)", "window_dates": [d.isoformat() for d in days], "updated_at": now, "offseason": True, "games": []})
         LOG.info("Offseason: skipping gamebook checks")
