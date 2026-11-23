@@ -1,0 +1,23 @@
+name: Archive integrity safety tests (staging)
+on:
+  push:
+    branches:
+      - staging-archive-safety-2026-11-22
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  archive-safety:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Check Python syntax
+        run: python -m py_compile archive.py
+      - name: Simulate corrupt archives, duplicates, disk failure and actual repository merge
+        run: python -m unittest discover -s tests -p 'test_archive_safety.py' -v
+      - name: Confirm tracked gamebook and archive data were not modified
+        run: git diff --exit-code -- archive.json gamebooks.json
