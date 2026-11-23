@@ -53,6 +53,8 @@ def archive_outgoing_games(feed_path, archive_path, days, archive_module):
         archive_path, "Cumulative historical archive"
     )
     merged = archive_module.build_archive({"games": outgoing}, previous_archive)
+    from forward_only import filter_archive
+    merged = filter_archive(archive_path, merged)
     if merged["games"] != previous_archive["games"]:
         archive_module.atomic_write_json(archive_path, merged)
         print(f"Safely archived {len(outgoing)} outgoing records before rollover")
