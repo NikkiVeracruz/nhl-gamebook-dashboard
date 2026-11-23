@@ -128,6 +128,10 @@ def main():
     live = load_payload(LIVE, "Current feed")
     previous = load_payload(ARCHIVE, "Historical archive")
     output = build_archive(live, previous)
+    # Compare what would actually be retained, not unverified provisional
+    # live records that the forward-only writer would otherwise discard.
+    from forward_only import filter_archive
+    output = filter_archive(ARCHIVE, output)
     if output["games"] == previous["games"]:
         print("Archive unchanged; no write required")
         return
