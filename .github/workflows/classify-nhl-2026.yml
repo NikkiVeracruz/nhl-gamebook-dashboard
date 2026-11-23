@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - .github/workflows/classify-nhl-2026.yml
+      - competition_policy.py
 permissions:
   contents: write
 concurrency:
