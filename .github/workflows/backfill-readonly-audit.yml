@@ -1,0 +1,49 @@
+name: Read-only backfill verification (staging)
+on:
+  push:
+    branches: [staging-archive-safety-2026-11-22]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Fetch latest production baseline
+        run: git fetch --no-tags --depth=1 origin main
+      - name: Copy production NHL archive to scratch checkout
+        run: |
+          git show FETCH_HEAD:archive.json > archive.json
+          git show FETCH_HEAD:archive-progress.json > archive-progress.json
+
+      - name: Exercise one recent historical batch in scratch checkout
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from datetime import date, timedelta
+          path = Path("archive-progress.json")
+          data = json.loads(path.read_text())
+          data["next_date"] = (date.today() - timedelta(days=1)).isoformat()
+          data["complete"] = False
+          path.write_text(json.dumps(data, indent=2) + "\n")
+          print("Scratch-only backfill cursor:", data["next_date"])
+          PY
+
+      - name: Execute the real NHL historical backfill script without publishing
+        env:
+          ARCHIVE_LEAGUE: nhl
+        run: timeout 510s python backfill.py
+      - name: Check against latest untouched production archive
+        run: python tests/archive_integrity_gate.py archive.json --baseline-ref FETCH_HEAD
+      - name: Confirm audit ran on staging and published nothing
+        run: |
+          test "$(git branch --show-current)" = "staging-archive-safety-2026-11-22"
+          echo "PASS: all changes are isolated to this disposable Actions runner; no git push or commit was performed."
