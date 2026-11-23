@@ -35,6 +35,8 @@ jobs:
             for attempt in 1 2 3 4; do
               if git push; then exit 0; fi
               git pull --rebase -X theirs origin main
+              # Re-check against the freshly fetched remote after conflict resolution.
+              python tests/archive_integrity_gate.py archive.json --baseline-ref FETCH_HEAD
               sleep 2
             done
             exit 1
