@@ -74,7 +74,9 @@ def candidates(league, scope, today):
     backlog.sort(key=lambda g: (g["date"], str(g.get("id", ""))))
     if not backlog:
         return []
-    first = today.toordinal() % len(backlog)
+    # Advance by the number of inspected games, not just one per day.
+    # That gives a bounded, complete rotation even for large old backlogs.
+    first = (today.toordinal() * 4) % len(backlog)
     return [backlog[(first + j) % len(backlog)]
             for j in range(min(len(backlog), 4))]
 
