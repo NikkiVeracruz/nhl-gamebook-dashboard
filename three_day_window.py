@@ -4,6 +4,7 @@
 The reporting day changes at 03:00 America/New_York local time, even when
 daylight saving time starts or ends. Display and archival retention are separate.
 """
+import json
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -23,6 +24,15 @@ def three_days(now=None):
     today = reporting_day(now)
     return [today - timedelta(days=1), today, today + timedelta(days=1)]
 
+
+
+def scheduled_games_in_window(calendar_path, days):
+    """Do not hide atypically scheduled games merely because month is offseason."""
+    calendar = json.loads(Path(calendar_path).read_text(encoding="utf-8"))
+    game_days = calendar.get("game_days")
+    if not isinstance(game_days, list):
+        raise ValueError("Missing game days in the official cached calendar")
+    return bool({d.isoformat() for d in days}.intersection(game_days))
 
 def archive_outgoing_games(feed_path, archive_path, days, archive_module):
     """Persist every outgoing record and official link before removing it from feed.
