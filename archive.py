@@ -124,6 +124,9 @@ def main():
     live = load_payload(LIVE, "Current feed")
     previous = load_payload(ARCHIVE, "Historical archive")
     output = build_archive(live, previous)
+    if output["games"] == previous["games"]:
+        print("Archive unchanged; no write required")
+        return
     atomic_write_json(ARCHIVE, output)
     print(
         "Archive integrity PASS: "

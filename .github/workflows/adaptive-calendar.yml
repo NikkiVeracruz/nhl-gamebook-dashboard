@@ -1,0 +1,79 @@
+name: Adaptive league game-date controller
+# Only data files and workflow activation states change; never rewrite workflow YAML.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/adaptive-calendar.yml
+  schedule:
+    - cron: "3 0,3 * * *"
+      timezone: "America/New_York"
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: league-calendar-coordinator
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - name: Test calendar rules and archived-report completion logic
+        run: python -m unittest discover -s tests -p 'test_adaptive_monitor.py' -v
+      - name: Fetch actual games over the next 21 days
+        run: |
+          python adaptive_monitor.py refresh NHL
+      - name: Publish only changed schedule caches
+        run: |
+          git diff --exit-code -- archive.json gamebooks.json .github/workflows/
+          if [[ -z "$(git status --porcelain league-calendar.json)" ]]; then
+            echo "No league schedule changes"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add league-calendar.json
+            git commit -m "Update game-day calendar cache"
+            for attempt in 1 2 3; do
+              if git push; then break; fi
+              if [ "$attempt" = 3 ]; then exit 1; fi
+              git pull --rebase -X theirs origin main
+            done
+          fi
+      - name: Enable or disable monitoring based on games and outstanding reports
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+
+          if python adaptive_monitor.py guard NHL; then wanted="active"; else
+            code=$?
+            if [ "$code" -ne 3 ]; then exit "$code"; fi
+            wanted="disabled"
+          fi
+          for workflow in update.yml backfill.yml; do
+            state=$(gh api "repos/$GITHUB_REPOSITORY/actions/workflows/$workflow" --jq '.state')
+            if [ "$wanted" = "active" ] && [ "$state" != "active" ]; then
+              gh api -X PUT "repos/$GITHUB_REPOSITORY/actions/workflows/$workflow/enable"
+              echo "NHL: enabled $workflow for game-day monitoring and completeness"
+            elif [ "$wanted" = "disabled" ] && [ "$state" = "active" ]; then
+              gh api -X PUT "repos/$GITHUB_REPOSITORY/actions/workflows/$workflow/disable"
+              echo "NHL: disabled idle $workflow"
+            else
+              echo "NHL: $workflow already $state"
+            fi
+          done
+      - name: Bootstrap live checks after coordinator release
+        if: github.event_name == 'push'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if python adaptive_monitor.py guard NHL; then
+            gh workflow run update.yml --ref main
+            echo "NHL: initial scan requested"
+          fi
