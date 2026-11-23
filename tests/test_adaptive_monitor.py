@@ -18,7 +18,7 @@ class AdaptiveLeagueTests(unittest.TestCase):
     def sample(self, league, game_date="2026-11-22", status=None, **links):
         statuses = {"NBA": "Final", "WNBA": "Final",
                     "NHL": "OFF", "MLB": "Final"}
-        return {"id": "1234567", "date": game_date,
+        return {"id": "2026020381" if league == "NHL" else "1234567", "date": game_date,
                 "label": "Team A @ Team B",
                 "status": status or statuses[league], **links}
 
