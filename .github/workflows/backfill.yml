@@ -23,6 +23,8 @@ jobs:
         env:
           ARCHIVE_LEAGUE: nhl
         run: python backfill.py
+      - name: Block any loss of previously archived games or report links
+        run: python tests/archive_integrity_gate.py archive.json
       - name: Save historical archive and progress
         run: |
           if [[ -n "$(git status --porcelain archive.json archive-progress.json)" ]]; then
@@ -33,6 +35,8 @@ jobs:
             for attempt in 1 2 3 4; do
               if git push; then exit 0; fi
               git pull --rebase -X theirs origin main
+              # Re-check against the freshly fetched remote after conflict resolution.
+              python tests/archive_integrity_gate.py archive.json --baseline-ref FETCH_HEAD
               sleep 2
             done
             exit 1
