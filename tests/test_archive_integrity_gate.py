@@ -55,5 +55,63 @@ class ArchiveGateTests(unittest.TestCase):
                           {"games": [entry("1"), entry("1")]})
 
 
+    def test_retry_gate_checks_newer_remote_commit(self):
+        # A concurrent publisher may add a game after this run checked out.
+        # The candidate must be compared to that NEW upstream baseline too.
+        import json
+        from unittest.mock import patch
+        import archive_integrity_gate as gate
+
+        newer_remote = {"games": [
+            entry("1", "https://example.org/old.pdf"),
+            entry("another-run-added"),
+        ]}
+        candidate = {"games": [entry("1", "https://example.org/old.pdf")]}
+        with patch.object(gate.subprocess, "check_output", return_value=json.dumps(newer_remote)) as git_show, \
+             patch.object(gate, "load_payload", return_value=candidate):
+            with self.assertRaisesRegex(ArchiveIntegrityError, "remove 1 archived games"):
+                gate.main("archive.json", "FETCH_HEAD")
+            git_show.assert_called_once_with(
+                ["git", "show", "FETCH_HEAD:archive.json"],
+                text=True, stderr=gate.subprocess.PIPE
+            )
+
+    def test_retry_gate_uses_wnba_upstream_ref_when_requested(self):
+        import json
+        from unittest.mock import patch
+        import archive_integrity_gate as gate
+
+        current = {"games": [entry("1")]}
+        with patch.object(gate.subprocess, "check_output", return_value=json.dumps(current)) as git_show, \
+             patch.object(gate, "load_payload", return_value=current):
+            gate.main("wnba/archive.json", "origin/main")
+            git_show.assert_called_once_with(
+                ["git", "show", "origin/main:wnba/archive.json"],
+                text=True, stderr=gate.subprocess.PIPE
+            )
+
+    def test_publishing_workflows_revalidate_after_rebase(self):
+        from pathlib import Path
+        root = Path(__file__).resolve().parents[1]
+        paths = [
+            (".github/workflows/update.yml", "archive.json", "FETCH_HEAD"),
+            (".github/workflows/backfill.yml", "archive.json", "FETCH_HEAD"),
+        ]
+        if (root / ".github/workflows/wnba-update.yml").exists():
+            paths.extend([
+                (".github/workflows/wnba-update.yml", "wnba/archive.json", "origin/main"),
+                (".github/workflows/wnba-backfill.yml", "wnba/archive.json", "origin/main"),
+            ])
+        for name, archive_path, git_ref in paths:
+            with self.subTest(name=name):
+                workflow = (root / name).read_text(encoding="utf-8")
+                retry_pos = workflow.index("git rebase -X theirs") if "wnba-" in name else workflow.index("git pull --rebase -X theirs")
+                guard_pos = workflow.index(
+                    "python tests/archive_integrity_gate.py " + archive_path +
+                    " --baseline-ref " + git_ref
+                )
+                self.assertGreater(guard_pos, retry_pos)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
