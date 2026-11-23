@@ -21,16 +21,18 @@ jobs:
       - run: pip install -r requirements.txt
       - name: Retry a rotating sample of up to four older missing game reports
         run: python recover_reports.py NHL stale
+      - name: Keep 2026 preseason review status synchronized after report retries
+        run: python competition_policy.py
       - name: Record recovery check separately from unchanged game feed
         run: python adaptive_monitor.py heartbeat NHL
       - name: Reject loss of previously archived games or official reports
         run: python tests/archive_integrity_gate.py archive.json
       - name: Publish only new documents or report-status changes
         run: |
-          if [[ -n "$(git status --porcelain archive.json poll-status.json)" ]]; then
+          if [[ -n "$(git status --porcelain archive.json competition-review.json poll-status.json)" ]]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add archive.json poll-status.json
+            git add archive.json competition-review.json poll-status.json
             git commit -m "Retry overdue NHL report links safely"
             for attempt in 1 2 3 4; do
               if git push; then exit 0; fi
