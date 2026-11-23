@@ -23,6 +23,8 @@ jobs:
         run: python monitor.py
       - name: Update historical archive
         run: python archive.py
+      - name: Block any loss of previously archived games or report links
+        run: python tests/archive_integrity_gate.py archive.json
       - name: Publish report availability
         run: |
           if [[ -n "$(git status --porcelain gamebooks.json archive.json)" ]]; then
