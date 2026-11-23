@@ -8,6 +8,7 @@ from zoneinfo import ZoneInfo
 import requests
 import archive as archive_module
 from three_day_window import three_days, archive_outgoing_games, scheduled_games_in_window
+from competition_policy import nhl_game
 
 ET = ZoneInfo("America/New_York")
 OUT = Path("gamebooks.json")
@@ -50,6 +51,9 @@ def get_games(session, day):
     for g in r.json().get("games", []):
         gid = str(g.get("id", ""))
         if len(gid) != 10 or not gid.isdigit():
+            continue
+        if not nhl_game(gid):
+            LOG.info("Skip non-NHL event %s from current NHL games", gid)
             continue
         away, home = g.get("awayTeam", {}), g.get("homeTeam", {})
         away_name = away.get("name", {}).get("default") or away.get("abbrev", "Away")
