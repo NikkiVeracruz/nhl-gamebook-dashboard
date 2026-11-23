@@ -1,0 +1,46 @@
+name: NHL adaptive monitoring backup watchdog
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "37 * * * *"
+      timezone: "America/New_York"
+permissions:
+  contents: read
+  actions: write
+concurrency:
+  group: nhl-adaptive-watchdog
+  cancel-in-progress: false
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Verify idle/stale heartbeat decisions
+        run: python -m unittest discover -s tests -p 'test_adaptive_watchdog.py' -v
+      - name: Determine whether active NHL checks have stalled
+        id: need
+        run: python tests/adaptive_watchdog.py NHL
+      - name: Dispatch a single manual recovery scan if genuinely stalled
+        if: steps.need.outputs.needed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          primary=$(gh api "repos/$GITHUB_REPOSITORY/actions/workflows/update.yml/runs?per_page=12")
+          backups=$(gh api "repos/$GITHUB_REPOSITORY/actions/workflows/manual-nhl.yml/runs?per_page=12")
+          printf '%s' "$primary" | jq -e '.workflow_runs|type=="array"' >/dev/null
+          printf '%s' "$backups" | jq -e '.workflow_runs|type=="array"' >/dev/null
+          cutoff=$(date -u -d '70 minutes ago' +%Y-%m-%dT%H:%M:%SZ)
+          if printf '%s' "$primary" | jq -e '[.workflow_runs[] | select(.status=="queued" or .status=="in_progress" or .status=="pending" or .status=="waiting")] | length>0' >/dev/null; then
+            echo "NHL primary monitoring currently running; do not dispatch duplicate"
+            exit 0
+          fi
+          if printf '%s' "$backups" | jq -e --arg cutoff "$cutoff" '[.workflow_runs[] | select(.created_at >= $cutoff or .status=="queued" or .status=="in_progress" or .status=="pending")] | length>0' >/dev/null; then
+            echo "NHL backup recently requested or running; do not dispatch duplicate"
+            exit 0
+          fi
+          gh workflow run manual-nhl.yml --ref main
+          echo "Requested a single protected manual NHL gamebook check"

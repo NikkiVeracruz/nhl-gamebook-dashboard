@@ -57,7 +57,7 @@ jobs:
             if [ "$code" -ne 3 ]; then exit "$code"; fi
             wanted="disabled"
           fi
-          for workflow in update.yml backfill.yml; do
+          for workflow in update.yml backfill.yml adaptive-watchdog-nhl.yml; do
             state=$(gh api "repos/$GITHUB_REPOSITORY/actions/workflows/$workflow" --jq '.state')
             if [ "$wanted" = "active" ] && [ "$state" != "active" ]; then
               gh api -X PUT "repos/$GITHUB_REPOSITORY/actions/workflows/$workflow/enable"
