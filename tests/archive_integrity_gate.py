@@ -9,6 +9,8 @@ import subprocess
 import sys
 from pathlib import Path
 
+# Executed as python tests/archive_integrity_gate.py; add repository root.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from archive import ArchiveIntegrityError, REPORT_KEYS, load_payload, validate_games
 
 ALLOWED_ARCHIVES = {"archive.json", "wnba/archive.json"}
