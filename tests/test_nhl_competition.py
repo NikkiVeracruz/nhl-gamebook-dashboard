@@ -46,16 +46,19 @@ class NHLCompetitionTests(unittest.TestCase):
             archive.write_text(json.dumps({"games":[
                 {"id":"2025090001","date":"2026-02-11","label":"Sweden @ Italy","status":"FINAL"},
                 {"id":"2026010044","date":"2026-09-24","label":"Predators @ Hurricanes","status":"FINAL"},
+                {"id":"2025010036","date":"2025-09-25","label":"Flyers @ Capitals","status":"FINAL"},
                 {"id":"2026020055","date":"2026-10-14","label":"Hurricanes @ Rangers","status":"OFF",
                  "gs_url":"https://www.nhl.com/scores/htmlreports/20262027/GS020055.HTM",
                  "es_url":"https://www.nhl.com/scores/htmlreports/20262027/ES020055.HTM"},
             ]}))
             result=policy.classify_archive(archive,review)
             saved={g["id"]:g for g in json.loads(archive.read_text())["games"]}
-            self.assertEqual(len(saved),3)
+            self.assertEqual(len(saved),4)
             self.assertEqual(saved["2025090001"]["report_requirement"],"not_applicable_nhl")
             self.assertEqual(saved["2026010044"]["report_requirement"],"needs_verification")
             self.assertEqual(len(result["unverified_nhl_preseason_reports"]),1)
+            self.assertEqual(result["unverified_nhl_preseason_reports"][0]["date"],"2026-09-24")
+            self.assertIn("2025010036",saved)
             self.assertEqual(saved["2026020055"]["gs_url"],
                              "https://www.nhl.com/scores/htmlreports/20262027/GS020055.HTM")
             before=archive.read_text()
