@@ -29,9 +29,9 @@ jobs:
           import re
           from pathlib import Path
           source=Path("index.html").read_text()
-          blocks=re.findall(r"<script[^>]*>([\\s\\S]*?)</script>",source)
-          assert blocks
-          script=max(blocks,key=len)
+          first=source.index("<script>")+len("<script>")
+          last=source.index("</script>",first)
+          script=source[first:last]
           assert "threeDisplayDates" in script and "lastWindowKey" in script
           Path("/tmp/three-day-nhl.js").write_text(script)
           PY
