@@ -23,6 +23,8 @@ jobs:
         run: python monitor.py
       - name: Update historical archive
         run: python archive.py
+      - name: Block any loss of previously archived games or report links
+        run: python tests/archive_integrity_gate.py archive.json
       - name: Publish report availability
         run: |
           if [[ -n "$(git status --porcelain gamebooks.json archive.json)" ]]; then
@@ -34,6 +36,8 @@ jobs:
               if git push; then exit 0; fi
               echo "Remote changed; rebasing and retrying push ($attempt)"
               git pull --rebase -X theirs origin main
+              # Re-check against the freshly fetched remote after conflict resolution.
+              python tests/archive_integrity_gate.py archive.json --baseline-ref FETCH_HEAD
               sleep 2
             done
             echo "Could not publish after retries" >&2
