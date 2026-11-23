@@ -1,4 +1,5 @@
 name: Adaptive league game-date controller
+# Production activation after passing staging safety checks.
 # Only data files and workflow activation states change; never rewrite workflow YAML.
 on:
   workflow_dispatch:
