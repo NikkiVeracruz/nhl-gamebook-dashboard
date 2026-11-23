@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23T03:44:59.971217+00:00",
+  "updated_at": "2026-11-23T04:35:26.745188+00:00",
   "games": [
     {
       "id": "2026020384",
@@ -63,7 +63,7 @@
       "id": "2026020375",
       "date": "2026-11-22",
       "label": "Oilers @ Blues",
-      "status": "FINAL",
+      "status": "OFF",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020375.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020375.HTM"
     },
@@ -79,7 +79,7 @@
       "id": "2026020377",
       "date": "2026-11-22",
       "label": "Blackhawks @ Canucks",
-      "status": "LIVE",
+      "status": "OFF",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020377.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020377.HTM"
     },
