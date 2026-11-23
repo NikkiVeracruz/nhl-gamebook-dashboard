@@ -56,17 +56,18 @@ jobs:
             if [ "$code" -ne 3 ]; then exit "$code"; fi
             wanted="disabled"
           fi
-          workflow="update.yml"
-          state=$(gh api "repos/$GITHUB_REPOSITORY/actions/workflows/$workflow" --jq '.state')
-          if [ "$wanted" = "active" ] && [ "$state" != "active" ]; then
-            gh api -X PUT "repos/$GITHUB_REPOSITORY/actions/workflows/$workflow/enable"
-            echo "NHL: active game day or recent missing report; enabled five-minute checks"
-          elif [ "$wanted" = "disabled" ] && [ "$state" = "active" ]; then
-            gh api -X PUT "repos/$GITHUB_REPOSITORY/actions/workflows/$workflow/disable"
-            echo "NHL: idle; five-minute checks disabled"
-          else
-            echo "NHL: already $state"
-          fi
+          for workflow in update.yml backfill.yml; do
+            state=$(gh api "repos/$GITHUB_REPOSITORY/actions/workflows/$workflow" --jq '.state')
+            if [ "$wanted" = "active" ] && [ "$state" != "active" ]; then
+              gh api -X PUT "repos/$GITHUB_REPOSITORY/actions/workflows/$workflow/enable"
+              echo "NHL: enabled $workflow for game-day monitoring and completeness"
+            elif [ "$wanted" = "disabled" ] && [ "$state" = "active" ]; then
+              gh api -X PUT "repos/$GITHUB_REPOSITORY/actions/workflows/$workflow/disable"
+              echo "NHL: disabled idle $workflow"
+            else
+              echo "NHL: $workflow already $state"
+            fi
+          done
       - name: Bootstrap live checks after coordinator release
         if: github.event_name == 'push'
         env:
