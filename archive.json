@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23T00:09:14.762648+00:00",
+  "updated_at": "2026-11-23T01:00:25.259883+00:00",
   "games": [
     {
       "id": "2026020384",
@@ -47,7 +47,7 @@
       "id": "2026020374",
       "date": "2026-11-22",
       "label": "Sabres @ Lightning",
-      "status": "LIVE",
+      "status": "FINAL",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020374.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020374.HTM"
     },
@@ -55,13 +55,17 @@
       "id": "2026020376",
       "date": "2026-11-22",
       "label": "Penguins @ Stars",
-      "status": "PRE"
+      "status": "LIVE",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020376.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020376.HTM"
     },
     {
       "id": "2026020375",
       "date": "2026-11-22",
       "label": "Oilers @ Blues",
-      "status": "PRE"
+      "status": "LIVE",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020375.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020375.HTM"
     },
     {
       "id": "2026020373",
@@ -75,7 +79,7 @@
       "id": "2026020377",
       "date": "2026-11-22",
       "label": "Blackhawks @ Canucks",
-      "status": "FUT"
+      "status": "PRE"
     },
     {
       "id": "2026020371",
