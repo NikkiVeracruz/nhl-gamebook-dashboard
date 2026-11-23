@@ -1,0 +1,43 @@
+name: Manual NHL gamebook check (available while automatic checks are paused)
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: nhl-gamebooks
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Scan NHL reports
+        run: python monitor.py
+      - name: Update existing archive
+        run: python archive.py
+      - name: Retry recently missing official reports
+        run: python recover_reports.py NHL recent
+      - name: Record successful scan
+        run: python adaptive_monitor.py heartbeat NHL
+      - name: Check historical record and report safety
+        run: python tests/archive_integrity_gate.py archive.json
+      - name: Publish only changed data
+        run: |
+          if [[ -n "$(git status --porcelain gamebooks.json archive.json poll-status.json)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add gamebooks.json archive.json poll-status.json
+            git commit -m "Manually update NHL gamebook reports"
+            for attempt in 1 2 3 4; do
+              if git push; then exit 0; fi
+              git pull --rebase -X theirs origin main
+              python tests/archive_integrity_gate.py archive.json --baseline-ref FETCH_HEAD
+            done
+            exit 1
+          fi
+          echo "No NHL reports changed"
