@@ -65,6 +65,21 @@ def get_games(session, day):
         games.append(game)
     return games
 
+def write_if_changed(path, payload):
+    """Publish only genuine feed changes; save successful checks separately."""
+    try:
+        prior = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        prior = {}
+    visible = lambda x: {k: v for k, v in x.items() if k != "updated_at"}
+    if visible(prior) == visible(payload):
+        LOG.info("Feed unchanged; skipped timestamp-only commit")
+        return False
+    path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n",
+                    encoding="utf-8")
+    return True
+
+
 def main():
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
     # Seasonal guard: keep the website live but avoid report scraping in the offseason.
@@ -72,7 +87,7 @@ def main():
     # schedule source itself determines which games actually appear.
     if datetime.now(ET).month not in [9,10,11,12,1,2,3,4,5,6]:
         now = datetime.now(timezone.utc).isoformat()
-        OUT.write_text(json.dumps({"window_label": "Offseason", "updated_at": now, "offseason": True, "games": []}, indent=2) + "\n")
+        write_if_changed(OUT, {"window_label": "Offseason", "updated_at": now, "offseason": True, "games": []})
         LOG.info("Offseason: skipping gamebook checks")
         return
 
@@ -133,7 +148,7 @@ def main():
             "updated_at": datetime.now(timezone.utc).isoformat(), "games": games}
     if failures:
         data["warning"] = "NHL schedule data is temporarily unavailable for " + ", ".join(failures)
-    OUT.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    write_if_changed(OUT, data)
     LOG.info("Published %d games, %d reports", len(games), sum(bool(g.get(k)) for g in games for k in ("gs_url", "es_url")))
     if len(failures) == len(days):
         raise RuntimeError("Both NHL schedule requests failed")
