@@ -1,0 +1,33 @@
+name: NHL backup watchdog safety rehearsal (staging)
+on:
+  push:
+    branches: [staging-adaptive-watchdog-2026-11-23]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml
+      - name: Compile watchdog and validate automated enable/disable workflows
+        run: |
+          python -m py_compile tests/adaptive_watchdog.py
+          python - <<'PY'
+          import yaml
+          for name in [".github/workflows/adaptive-calendar.yml", ".github/workflows/adaptive-watchdog-nhl.yml"]:
+              with open(name) as fp:
+                  assert "jobs" in yaml.safe_load(fp)
+          print("All adaptive monitoring workflows parsed")
+          PY
+      - name: Test true stall versus intentionally idle cases
+        run: |
+          python -m unittest discover -s tests -p 'test_adaptive_watchdog.py' -v
+          python tests/adaptive_watchdog.py NHL
+      - name: Verify no live game data or archives changed
+        run: git diff --exit-code -- archive.json gamebooks.json
