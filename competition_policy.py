@@ -67,6 +67,7 @@ def classify_archive(archive_path=None, summary_path=None):
         if competition(g.get("id")) == INTERNATIONAL:
             international.append(str(g["id"]))
         if (competition(g.get("id")) == "nhl_preseason"
+                and g.get("date", "").startswith("2026")
                 and str(g.get("status", "")).lower() in ("off", "final")
                 and not (g.get("gs_url") and g.get("es_url"))):
             pending.append({
