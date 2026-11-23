@@ -1,0 +1,40 @@
+name: NHL adaptive monitoring safety rehearsal (staging)
+on:
+  push:
+    branches: [staging-adaptive-monitor-2026-11-23]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt pyyaml
+      - name: Compile code and validate GitHub Actions workflow syntax
+        run: |
+          python -m py_compile adaptive_monitor.py recover_reports.py monitor.py archive.py
+          python - <<'PY'
+          import yaml
+          from pathlib import Path
+          paths = [".github/workflows/adaptive-calendar.yml", ".github/workflows/update.yml"]
+          paths += [str(p) for p in Path(".github/workflows").glob("manual-*.yml")]
+          paths += [str(p) for p in Path(".github/workflows").glob("stale-recovery-*.yml")]
+          for name in paths:
+              with open(name) as handle:
+                  assert "jobs" in yaml.safe_load(handle), name
+          print("All adaptive workflows are valid YAML")
+          PY
+      - name: Test calendar, completion rules and existing archive safety
+        run: |
+          python -m unittest discover -s tests -p 'test_adaptive_monitor.py' -v
+          python -m unittest discover -s tests -p 'test_archive_safety.py' -v
+      - name: Rehearse live schedules without publishing or changing historical records
+        run: |
+          python adaptive_monitor.py refresh NHL
+          git diff --exit-code -- archive.json gamebooks.json archive-progress.json
+          echo "PASS: league calendars checked, archival data protected"
