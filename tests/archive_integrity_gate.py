@@ -35,12 +35,12 @@ def verify_change(old, new, source="archive"):
     return len(prior), len(proposed)
 
 
-def main(path):
+def main(path, baseline_ref="HEAD"):
     if path not in ALLOWED_ARCHIVES:
         raise ArchiveIntegrityError("Only known archive paths may be checked")
     try:
         baseline_text = subprocess.check_output(
-            ["git", "show", f"HEAD:{path}"], text=True, stderr=subprocess.PIPE
+            ["git", "show", f"{baseline_ref}:{path}"], text=True, stderr=subprocess.PIPE
         )
         baseline = json.loads(baseline_text)
     except (subprocess.CalledProcessError, ValueError, OSError) as exc:
@@ -53,9 +53,9 @@ def main(path):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        sys.exit("Usage: python tests/archive_integrity_gate.py archive.json|wnba/archive.json")
+    if len(sys.argv) not in (2, 4) or (len(sys.argv) == 4 and sys.argv[2] != '--baseline-ref'):
+        sys.exit("Usage: python tests/archive_integrity_gate.py ARCHIVE_PATH [--baseline-ref GIT_REF]")
     try:
-        main(sys.argv[1])
+        main(sys.argv[1], sys.argv[3] if len(sys.argv) == 4 else "HEAD")
     except ArchiveIntegrityError as exc:
         sys.exit(f"ARCHIVE PUBLICATION BLOCKED: {exc}")
