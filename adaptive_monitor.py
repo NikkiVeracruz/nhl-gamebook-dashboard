@@ -215,7 +215,8 @@ def main():
     elif args.action == "heartbeat":
         heartbeat(league)
     else:
-        manual = os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch"
+        manual = (os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch" and
+                  os.environ.get("ADAPTIVE_MANUAL_SCAN") == "true")
         if should_poll(league, manual=manual):
             print(f"{league}: ACTIVE")
         else:
