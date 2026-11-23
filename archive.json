@@ -1,6 +1,48 @@
 {
-  "updated_at": "2026-11-22T23:59:58.111627+00:00",
+  "updated_at": "2026-11-23T00:09:14.762648+00:00",
   "games": [
+    {
+      "id": "2026020384",
+      "date": "2026-11-23",
+      "label": "Wild @ Sharks",
+      "status": "FUT"
+    },
+    {
+      "id": "2026020381",
+      "date": "2026-11-23",
+      "label": "Maple Leafs @ Islanders",
+      "status": "FUT"
+    },
+    {
+      "id": "2026020382",
+      "date": "2026-11-23",
+      "label": "Mammoth @ Jets",
+      "status": "FUT"
+    },
+    {
+      "id": "2026020379",
+      "date": "2026-11-23",
+      "label": "Kings @ Canadiens",
+      "status": "FUT"
+    },
+    {
+      "id": "2026020380",
+      "date": "2026-11-23",
+      "label": "Flames @ Senators",
+      "status": "FUT"
+    },
+    {
+      "id": "2026020383",
+      "date": "2026-11-23",
+      "label": "Ducks @ Kraken",
+      "status": "FUT"
+    },
+    {
+      "id": "2026020378",
+      "date": "2026-11-23",
+      "label": "Blue Jackets @ Devils",
+      "status": "FUT"
+    },
     {
       "id": "2026020374",
       "date": "2026-11-22",
