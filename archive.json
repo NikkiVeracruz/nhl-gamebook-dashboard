@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23T06:09:18.151196+00:00",
+  "updated_at": "2026-11-23T06:46:31.199120+00:00",
   "games": [
     {
       "id": "2026020384",
@@ -3215,7 +3215,9 @@
       "id": "2026010044",
       "date": "2026-09-24",
       "label": "Predators @ Hurricanes",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "nhl_preseason",
+      "report_requirement": "needs_verification"
     },
     {
       "id": "2026010046",
@@ -3413,7 +3415,9 @@
       "id": "2026010022",
       "date": "2026-09-21",
       "label": "Senators @ Canadiens",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "nhl_preseason",
+      "report_requirement": "needs_verification"
     },
     {
       "id": "2026010016",
@@ -3443,7 +3447,9 @@
       "id": "2026010020",
       "date": "2026-09-21",
       "label": "Flyers @ Capitals",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "nhl_preseason",
+      "report_requirement": "needs_verification"
     },
     {
       "id": "2026010021",
@@ -3545,7 +3551,9 @@
       "id": "2026010002",
       "date": "2026-09-19",
       "label": "Golden Knights @ Kings",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "nhl_preseason",
+      "report_requirement": "needs_verification"
     },
     {
       "id": "2026010005",
@@ -7463,181 +7471,241 @@
       "id": "2025090030",
       "date": "2026-02-22",
       "label": "USA @ Canada",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "international_hockey",
+      "report_requirement": "not_applicable_nhl"
     },
     {
       "id": "2025090029",
       "date": "2026-02-21",
       "label": "Finland @ Slovakia",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "international_hockey",
+      "report_requirement": "not_applicable_nhl"
     },
     {
       "id": "2025090028",
       "date": "2026-02-20",
       "label": "Slovakia @ USA",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "international_hockey",
+      "report_requirement": "not_applicable_nhl"
     },
     {
       "id": "2025090027",
       "date": "2026-02-20",
       "label": "Finland @ Canada",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "international_hockey",
+      "report_requirement": "not_applicable_nhl"
     },
     {
       "id": "2025090024",
       "date": "2026-02-18",
       "label": "Switzerland @ Finland",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "international_hockey",
+      "report_requirement": "not_applicable_nhl"
     },
     {
       "id": "2025090026",
       "date": "2026-02-18",
       "label": "Sweden @ USA",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "international_hockey",
+      "report_requirement": "not_applicable_nhl"
     },
     {
       "id": "2025090023",
       "date": "2026-02-18",
       "label": "Germany @ Slovakia",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "international_hockey",
+      "report_requirement": "not_applicable_nhl"
     },
     {
       "id": "2025090025",
       "date": "2026-02-18",
       "label": "Czechia @ Canada",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "international_hockey",
+      "report_requirement": "not_applicable_nhl"
     },
     {
       "id": "2025090022",
       "date": "2026-02-17",
       "label": "Latvia @ Sweden",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "international_hockey",
+      "report_requirement": "not_applicable_nhl"
     },
     {
       "id": "2025090020",
       "date": "2026-02-17",
       "label": "Italy @ Switzerland",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "international_hockey",
+      "report_requirement": "not_applicable_nhl"
     },
     {
       "id": "2025090019",
       "date": "2026-02-17",
       "label": "France @ Germany",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "international_hockey",
+      "report_requirement": "not_applicable_nhl"
     },
     {
       "id": "2025090021",
       "date": "2026-02-17",
       "label": "Denmark @ Czechia",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "international_hockey",
+      "report_requirement": "not_applicable_nhl"
     },
     {
       "id": "2025090018",
       "date": "2026-02-15",
       "label": "USA @ Germany",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "international_hockey",
+      "report_requirement": "not_applicable_nhl"
     },
     {
       "id": "2025090015",
       "date": "2026-02-15",
       "label": "Switzerland @ Czechia",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "international_hockey",
+      "report_requirement": "not_applicable_nhl"
     },
     {
       "id": "2025090017",
       "date": "2026-02-15",
       "label": "Denmark @ Latvia",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "international_hockey",
+      "report_requirement": "not_applicable_nhl"
     },
     {
       "id": "2025090016",
       "date": "2026-02-15",
       "label": "Canada @ France",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "international_hockey",
+      "report_requirement": "not_applicable_nhl"
     },
     {
       "id": "2025090014",
       "date": "2026-02-14",
       "label": "USA @ Denmark",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "international_hockey",
+      "report_requirement": "not_applicable_nhl"
     },
     {
       "id": "2025090011",
       "date": "2026-02-14",
       "label": "Sweden @ Slovakia",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "international_hockey",
+      "report_requirement": "not_applicable_nhl"
     },
     {
       "id": "2025090012",
       "date": "2026-02-14",
       "label": "Germany @ Latvia",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "international_hockey",
+      "report_requirement": "not_applicable_nhl"
     },
     {
       "id": "2025090013",
       "date": "2026-02-14",
       "label": "Finland @ Italy",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "international_hockey",
+      "report_requirement": "not_applicable_nhl"
     },
     {
       "id": "2025090008",
       "date": "2026-02-13",
       "label": "Italy @ Slovakia",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "international_hockey",
+      "report_requirement": "not_applicable_nhl"
     },
     {
       "id": "2025090009",
       "date": "2026-02-13",
       "label": "France @ Czechia",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "international_hockey",
+      "report_requirement": "not_applicable_nhl"
     },
     {
       "id": "2025090007",
       "date": "2026-02-13",
       "label": "Finland @ Sweden",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "international_hockey",
+      "report_requirement": "not_applicable_nhl"
     },
     {
       "id": "2025090010",
       "date": "2026-02-13",
       "label": "Canada @ Switzerland",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "international_hockey",
+      "report_requirement": "not_applicable_nhl"
     },
     {
       "id": "2025090003",
       "date": "2026-02-12",
       "label": "Switzerland @ France",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "international_hockey",
+      "report_requirement": "not_applicable_nhl"
     },
     {
       "id": "2025090005",
       "date": "2026-02-12",
       "label": "Latvia @ USA",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "international_hockey",
+      "report_requirement": "not_applicable_nhl"
     },
     {
       "id": "2025090006",
       "date": "2026-02-12",
       "label": "Germany @ Denmark",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "international_hockey",
+      "report_requirement": "not_applicable_nhl"
     },
     {
       "id": "2025090004",
       "date": "2026-02-12",
       "label": "Czechia @ Canada",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "international_hockey",
+      "report_requirement": "not_applicable_nhl"
     },
     {
       "id": "2025090002",
       "date": "2026-02-11",
       "label": "Sweden @ Italy",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "international_hockey",
+      "report_requirement": "not_applicable_nhl"
     },
     {
       "id": "2025090001",
       "date": "2026-02-11",
       "label": "Slovakia @ Finland",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "international_hockey",
+      "report_requirement": "not_applicable_nhl"
     },
     {
       "id": "2025020907",
@@ -15147,13 +15215,17 @@
       "id": "2025010067",
       "date": "2025-09-30",
       "label": "Panthers @ Lightning",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "nhl_preseason",
+      "report_requirement": "needs_verification"
     },
     {
       "id": "2025010068",
       "date": "2025-09-30",
       "label": "Kings @ Mammoth",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "nhl_preseason",
+      "report_requirement": "needs_verification"
     },
     {
       "id": "2025010072",
@@ -15183,7 +15255,9 @@
       "id": "2025010069",
       "date": "2025-09-30",
       "label": "Canadiens @ Senators",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "nhl_preseason",
+      "report_requirement": "needs_verification"
     },
     {
       "id": "2025010065",
@@ -15245,7 +15319,9 @@
       "id": "2025010056",
       "date": "2025-09-28",
       "label": "Devils @ Senators",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "nhl_preseason",
+      "report_requirement": "needs_verification"
     },
     {
       "id": "2025010059",
@@ -15307,7 +15383,9 @@
       "id": "2025010046",
       "date": "2025-09-27",
       "label": "Ducks @ Kings",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "nhl_preseason",
+      "report_requirement": "needs_verification"
     },
     {
       "id": "2025010053",
@@ -15433,7 +15511,9 @@
       "id": "2025010036",
       "date": "2025-09-25",
       "label": "Flyers @ Capitals",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "nhl_preseason",
+      "report_requirement": "needs_verification"
     },
     {
       "id": "2025010032",
@@ -15471,7 +15551,9 @@
       "id": "2025010029",
       "date": "2025-09-24",
       "label": "Flames @ Canucks",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "nhl_preseason",
+      "report_requirement": "needs_verification"
     },
     {
       "id": "2025010021",
@@ -15677,7 +15759,9 @@
       "id": "2025010001",
       "date": "2025-09-21",
       "label": "Ducks @ Kings",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "nhl_preseason",
+      "report_requirement": "needs_verification"
     },
     {
       "id": "2025010013",
@@ -15707,7 +15791,9 @@
       "id": "2025010103",
       "date": "2025-09-21",
       "label": "Avalanche @ Mammoth",
-      "status": "FINAL"
+      "status": "FINAL",
+      "competition": "nhl_preseason",
+      "report_requirement": "needs_verification"
     },
     {
       "id": "2025010101",
