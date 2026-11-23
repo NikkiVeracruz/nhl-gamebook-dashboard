@@ -1,8 +1,8 @@
 name: Backfill NHL Historical Archive
+# Historical backfill is suspended in forward-only mode.
+# To reactivate, enable repo variable ENABLE_HISTORICAL_BACKFILL=true and run manually.
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "8,23,38,53 * * * *"
 permissions:
   contents: write
   actions: write
@@ -11,6 +11,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   backfill:
+    if: ${{ vars.ENABLE_HISTORICAL_BACKFILL == 'true' }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
