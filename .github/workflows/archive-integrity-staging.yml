@@ -16,12 +16,16 @@ jobs:
         with:
           python-version: "3.12"
       - name: Check Python syntax
-        run: python -m py_compile archive.py tests/archive_integrity_gate.py
+        run: python -m py_compile archive.py tests/archive_integrity_gate.py tests/rehearse_latest_archives.py
       - name: Simulate corrupt archives, duplicates, disk failure and actual repository merge
         run: python -m unittest discover -s tests -p 'test_archive_safety.py' -v
       - name: Verify archive publication gate rejects deletions and invalid documents
         run: python -m unittest discover -s tests -p 'test_archive_integrity_gate.py' -v
       - name: Inspect the currently checked-out historical archive without modifying it
         run: python tests/archive_integrity_gate.py archive.json
+      - name: Fetch the latest production archive snapshot without checking it out
+        run: git fetch --no-tags --depth=1 origin main
+      - name: Rehearse archive updates against current production data, in memory only
+        run: python tests/rehearse_latest_archives.py
       - name: Confirm tracked gamebook and archive data were not modified
         run: git diff --exit-code -- archive.json gamebooks.json
