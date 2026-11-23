@@ -6,6 +6,8 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 import requests
+import archive as archive_module
+from three_day_window import three_days, archive_outgoing_games, scheduled_games_in_window
 
 ET = ZoneInfo("America/New_York")
 OUT = Path("gamebooks.json")
@@ -82,17 +84,18 @@ def write_if_changed(path, payload):
 
 def main():
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
+    # Archive disappearing dates *before* publishing the new three-day feed.
+    days = three_days()
+    archive_outgoing_games(OUT, archive_module.ARCHIVE, days, archive_module)
     # Seasonal guard: keep the website live but avoid report scraping in the offseason.
     # Broad calendar boundaries allow preseason and late postseason games; the
     # schedule source itself determines which games actually appear.
-    if datetime.now(ET).month not in [9,10,11,12,1,2,3,4,5,6] and not __import__("adaptive_monitor").should_poll("NHL"):
+    if datetime.now(ET).month not in [9,10,11,12,1,2,3,4,5,6] and not scheduled_games_in_window("league-calendar.json", days) and not __import__("adaptive_monitor").should_poll("NHL"):
         now = datetime.now(timezone.utc).isoformat()
-        write_if_changed(OUT, {"window_label": "Offseason", "updated_at": now, "offseason": True, "games": []})
+        write_if_changed(OUT, {"window_label": f"{days[0]:%b %d, %Y} – {days[-1]:%b %d, %Y} (ET; 3 AM rollover)", "window_dates": [d.isoformat() for d in days], "updated_at": now, "offseason": True, "games": []})
         LOG.info("Offseason: skipping gamebook checks")
         return
 
-    today = (datetime.now(ET) - timedelta(hours=3)).date()
-    days = [today - timedelta(days=1), today]
     session = requests.Session()
     session.headers.update(HEADERS)
     games, failures = [], []
@@ -144,14 +147,15 @@ def main():
     except (OSError, ValueError, TypeError, KeyError, AttributeError) as exc:
         LOG.warning("Could not restore previously verified report links: %s", exc)
     games.sort(key=lambda g: (g["date"], g["label"]))
-    data = {"window_label": f"{days[0]:%b %d, %Y} – {days[1]:%b %d, %Y} (ET; 3 AM rollover)",
+    data = {"window_label": f"{days[0]:%b %d, %Y} – {days[-1]:%b %d, %Y} (ET; 3 AM rollover)",
+            "window_dates": [d.isoformat() for d in days],
             "updated_at": datetime.now(timezone.utc).isoformat(), "games": games}
     if failures:
         data["warning"] = "NHL schedule data is temporarily unavailable for " + ", ".join(failures)
     write_if_changed(OUT, data)
     LOG.info("Published %d games, %d reports", len(games), sum(bool(g.get(k)) for g in games for k in ("gs_url", "es_url")))
     if len(failures) == len(days):
-        raise RuntimeError("Both NHL schedule requests failed")
+        raise RuntimeError("All three NHL schedule requests failed")
 
 if __name__ == "__main__":
     main()
