@@ -44,6 +44,16 @@ class ThreeDayWindowTests(unittest.TestCase):
             ["2026-12-31", "2027-01-01", "2027-01-02"],
         )
 
+    def test_unusual_games_visible_even_in_offseason(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "calendar.json"
+            days = [date(2027, 4, 19), date(2027, 4, 20), date(2027, 4, 21)]
+            path.write_text(json.dumps({"game_days": ["2027-04-21"]}))
+            self.assertTrue(win.scheduled_games_in_window(path, days))
+            self.assertFalse(win.scheduled_games_in_window(
+                path, [date(2027, 4, 22), date(2027, 4, 23), date(2027, 4, 24)]
+            ))
+
     def test_naive_datetime_rejected(self):
         with self.assertRaises(ValueError):
             win.three_days(datetime(2026, 11, 23, 3))
