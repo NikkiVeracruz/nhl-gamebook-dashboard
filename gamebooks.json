@@ -5,7 +5,7 @@
     "2026-11-23",
     "2026-11-24"
   ],
-  "updated_at": "2026-11-24T00:21:56.248429+00:00",
+  "updated_at": "2026-11-24T01:43:44.674877+00:00",
   "games": [
     {
       "id": "2026020377",
@@ -65,25 +65,33 @@
       "id": "2026020380",
       "date": "2026-11-23",
       "label": "Flames @ Senators",
-      "status": "PRE"
+      "status": "LIVE",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020380.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020380.HTM"
     },
     {
       "id": "2026020379",
       "date": "2026-11-23",
       "label": "Kings @ Canadiens",
-      "status": "PRE"
+      "status": "LIVE",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020379.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020379.HTM"
     },
     {
       "id": "2026020382",
       "date": "2026-11-23",
       "label": "Mammoth @ Jets",
-      "status": "PRE"
+      "status": "LIVE",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020382.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020382.HTM"
     },
     {
       "id": "2026020381",
       "date": "2026-11-23",
       "label": "Maple Leafs @ Islanders",
-      "status": "PRE"
+      "status": "LIVE",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020381.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020381.HTM"
     },
     {
       "id": "2026020384",
