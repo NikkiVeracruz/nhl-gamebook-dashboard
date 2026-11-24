@@ -1,6 +1,14 @@
 {
-  "updated_at": "2026-11-24T04:44:09.198638+00:00",
+  "updated_at": "2026-11-24T05:42:18.520705+00:00",
   "games": [
+    {
+      "id": "2026020384",
+      "date": "2026-11-23",
+      "label": "Wild @ Sharks",
+      "status": "FINAL",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020384.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020384.HTM"
+    },
     {
       "id": "2026020381",
       "date": "2026-11-23",
@@ -32,6 +40,14 @@
       "status": "OFF",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020380.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020380.HTM"
+    },
+    {
+      "id": "2026020383",
+      "date": "2026-11-23",
+      "label": "Ducks @ Kraken",
+      "status": "FINAL",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020383.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020383.HTM"
     },
     {
       "id": "2026020378",
