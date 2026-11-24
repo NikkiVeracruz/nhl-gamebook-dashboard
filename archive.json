@@ -1,6 +1,14 @@
 {
-  "updated_at": "2026-11-23T08:13:32.077196+00:00",
+  "updated_at": "2026-11-24T02:41:11.100474+00:00",
   "games": [
+    {
+      "id": "2026020378",
+      "date": "2026-11-23",
+      "label": "Blue Jackets @ Devils",
+      "status": "FINAL",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020378.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020378.HTM"
+    },
     {
       "id": "2026020374",
       "date": "2026-11-22",

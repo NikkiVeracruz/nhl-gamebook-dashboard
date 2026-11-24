@@ -5,7 +5,7 @@
     "2026-11-23",
     "2026-11-24"
   ],
-  "updated_at": "2026-11-24T01:43:44.674877+00:00",
+  "updated_at": "2026-11-24T02:41:11.047405+00:00",
   "games": [
     {
       "id": "2026020377",
@@ -51,7 +51,7 @@
       "id": "2026020378",
       "date": "2026-11-23",
       "label": "Blue Jackets @ Devils",
-      "status": "LIVE",
+      "status": "FINAL",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020378.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020378.HTM"
     },
@@ -59,7 +59,7 @@
       "id": "2026020383",
       "date": "2026-11-23",
       "label": "Ducks @ Kraken",
-      "status": "FUT"
+      "status": "PRE"
     },
     {
       "id": "2026020380",
@@ -97,7 +97,7 @@
       "id": "2026020384",
       "date": "2026-11-23",
       "label": "Wild @ Sharks",
-      "status": "FUT"
+      "status": "PRE"
     },
     {
       "id": "2026020385",
