@@ -5,7 +5,7 @@
     "2026-11-24",
     "2026-11-25"
   ],
-  "updated_at": "2026-11-24T08:05:26.129294+00:00",
+  "updated_at": "2026-11-25T01:25:46.605797+00:00",
   "games": [
     {
       "id": "2026020378",
@@ -67,7 +67,9 @@
       "id": "2026020385",
       "date": "2026-11-24",
       "label": "Golden Knights @ Oilers",
-      "status": "FUT"
+      "status": "LIVE",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020385.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020385.HTM"
     },
     {
       "id": "2026020399",
