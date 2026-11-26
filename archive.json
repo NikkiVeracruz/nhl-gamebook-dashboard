@@ -1,6 +1,14 @@
 {
-  "updated_at": "2026-11-26T04:47:39.718060+00:00",
+  "updated_at": "2026-11-26T05:44:18.646709+00:00",
   "games": [
+    {
+      "id": "2026020398",
+      "date": "2026-11-25",
+      "label": "Sharks @ Ducks",
+      "status": "FINAL",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020398.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020398.HTM"
+    },
     {
       "id": "2026020389",
       "date": "2026-11-25",
@@ -82,12 +90,28 @@
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020394.HTM"
     },
     {
+      "id": "2026020397",
+      "date": "2026-11-25",
+      "label": "Canadiens @ Avalanche",
+      "status": "FINAL",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020397.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020397.HTM"
+    },
+    {
       "id": "2026020390",
       "date": "2026-11-25",
       "label": "Blues @ Islanders",
       "status": "OFF",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020390.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020390.HTM"
+    },
+    {
+      "id": "2026020399",
+      "date": "2026-11-25",
+      "label": "Blackhawks @ Kraken",
+      "status": "FINAL",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020399.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020399.HTM"
     },
     {
       "id": "2026020385",
