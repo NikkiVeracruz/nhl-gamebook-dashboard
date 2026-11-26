@@ -5,7 +5,7 @@
     "2026-11-25",
     "2026-11-26"
   ],
-  "updated_at": "2026-11-26T00:18:56.201129+00:00",
+  "updated_at": "2026-11-26T01:46:09.663962+00:00",
   "games": [
     {
       "id": "2026020385",
@@ -39,7 +39,9 @@
       "id": "2026020394",
       "date": "2026-11-25",
       "label": "Canucks @ Red Wings",
-      "status": "PRE"
+      "status": "LIVE",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020394.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020394.HTM"
     },
     {
       "id": "2026020393",
@@ -85,13 +87,17 @@
       "id": "2026020396",
       "date": "2026-11-25",
       "label": "Mammoth @ Wild",
-      "status": "FUT"
+      "status": "LIVE",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020396.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020396.HTM"
     },
     {
       "id": "2026020395",
       "date": "2026-11-25",
       "label": "Predators @ Stars",
-      "status": "FUT"
+      "status": "LIVE",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020395.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020395.HTM"
     },
     {
       "id": "2026020387",
