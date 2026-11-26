@@ -5,7 +5,7 @@
     "2026-11-25",
     "2026-11-26"
   ],
-  "updated_at": "2026-11-26T02:43:16.776325+00:00",
+  "updated_at": "2026-11-26T03:41:19.589652+00:00",
   "games": [
     {
       "id": "2026020385",
@@ -19,13 +19,15 @@
       "id": "2026020399",
       "date": "2026-11-25",
       "label": "Blackhawks @ Kraken",
-      "status": "PRE"
+      "status": "LIVE",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020399.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020399.HTM"
     },
     {
       "id": "2026020390",
       "date": "2026-11-25",
       "label": "Blues @ Islanders",
-      "status": "CRIT",
+      "status": "OFF",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020390.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020390.HTM"
     },
@@ -41,7 +43,7 @@
       "id": "2026020394",
       "date": "2026-11-25",
       "label": "Canucks @ Red Wings",
-      "status": "LIVE",
+      "status": "FINAL",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020394.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020394.HTM"
     },
@@ -49,7 +51,7 @@
       "id": "2026020393",
       "date": "2026-11-25",
       "label": "Devils @ Blue Jackets",
-      "status": "CRIT",
+      "status": "OFF",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020393.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020393.HTM"
     },
@@ -57,7 +59,7 @@
       "id": "2026020391",
       "date": "2026-11-25",
       "label": "Flames @ Penguins",
-      "status": "FINAL",
+      "status": "OFF",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020391.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020391.HTM"
     },
@@ -65,7 +67,7 @@
       "id": "2026020392",
       "date": "2026-11-25",
       "label": "Flyers @ Capitals",
-      "status": "CRIT",
+      "status": "OFF",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020392.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020392.HTM"
     },
@@ -73,7 +75,7 @@
       "id": "2026020388",
       "date": "2026-11-25",
       "label": "Hurricanes @ Lightning",
-      "status": "FINAL",
+      "status": "OFF",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020388.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020388.HTM"
     },
@@ -81,7 +83,7 @@
       "id": "2026020386",
       "date": "2026-11-25",
       "label": "Jets @ Bruins",
-      "status": "FINAL",
+      "status": "OFF",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020386.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020386.HTM"
     },
@@ -89,7 +91,7 @@
       "id": "2026020396",
       "date": "2026-11-25",
       "label": "Mammoth @ Wild",
-      "status": "LIVE",
+      "status": "CRIT",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020396.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020396.HTM"
     },
@@ -97,7 +99,7 @@
       "id": "2026020395",
       "date": "2026-11-25",
       "label": "Predators @ Stars",
-      "status": "LIVE",
+      "status": "FINAL",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020395.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020395.HTM"
     },
@@ -105,7 +107,7 @@
       "id": "2026020387",
       "date": "2026-11-25",
       "label": "Rangers @ Sabres",
-      "status": "FINAL",
+      "status": "OFF",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020387.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020387.HTM"
     },
@@ -113,7 +115,7 @@
       "id": "2026020389",
       "date": "2026-11-25",
       "label": "Senators @ Panthers",
-      "status": "LIVE",
+      "status": "OFF",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020389.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020389.HTM"
     },
@@ -121,7 +123,9 @@
       "id": "2026020398",
       "date": "2026-11-25",
       "label": "Sharks @ Ducks",
-      "status": "PRE"
+      "status": "LIVE",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020398.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020398.HTM"
     }
   ]
 }
