@@ -5,7 +5,7 @@
     "2026-11-27",
     "2026-11-28"
   ],
-  "updated_at": "2026-11-27T21:27:14.582114+00:00",
+  "updated_at": "2026-11-27T22:26:05.724131+00:00",
   "games": [
     {
       "id": "2026020408",
@@ -93,13 +93,13 @@
       "id": "2026020411",
       "date": "2026-11-27",
       "label": "Rangers @ Blackhawks",
-      "status": "FUT"
+      "status": "PRE"
     },
     {
       "id": "2026020407",
       "date": "2026-11-27",
       "label": "Red Wings @ Blue Jackets",
-      "status": "LIVE",
+      "status": "CRIT",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020407.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020407.HTM"
     },
@@ -115,7 +115,7 @@
       "id": "2026020403",
       "date": "2026-11-27",
       "label": "Stars @ Blues",
-      "status": "LIVE",
+      "status": "OFF",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020403.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020403.HTM"
     },

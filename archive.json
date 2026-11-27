@@ -1,6 +1,14 @@
 {
-  "updated_at": "2026-11-27T21:27:14.636244+00:00",
+  "updated_at": "2026-11-27T22:26:05.785183+00:00",
   "games": [
+    {
+      "id": "2026020403",
+      "date": "2026-11-27",
+      "label": "Stars @ Blues",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020403.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020403.HTM"
+    },
     {
       "id": "2026020400",
       "date": "2026-11-27",
