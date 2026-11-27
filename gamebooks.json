@@ -5,7 +5,7 @@
     "2026-11-27",
     "2026-11-28"
   ],
-  "updated_at": "2026-11-27T17:42:10.278553+00:00",
+  "updated_at": "2026-11-27T18:32:06.194584+00:00",
   "games": [
     {
       "id": "2026020408",
@@ -23,7 +23,9 @@
       "id": "2026020401",
       "date": "2026-11-27",
       "label": "Flames @ Devils",
-      "status": "PRE"
+      "status": "LIVE",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020401.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020401.HTM"
     },
     {
       "id": "2026020410",
@@ -53,13 +55,17 @@
       "id": "2026020402",
       "date": "2026-11-27",
       "label": "Mammoth @ Predators",
-      "status": "PRE"
+      "status": "LIVE",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020402.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020402.HTM"
     },
     {
       "id": "2026020400",
       "date": "2026-11-27",
       "label": "Maple Leafs @ Bruins",
-      "status": "PRE"
+      "status": "LIVE",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020400.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020400.HTM"
     },
     {
       "id": "2026020406",
@@ -95,7 +101,7 @@
       "id": "2026020403",
       "date": "2026-11-27",
       "label": "Stars @ Blues",
-      "status": "FUT"
+      "status": "PRE"
     },
     {
       "id": "2026020415",
