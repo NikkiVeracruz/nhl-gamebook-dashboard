@@ -5,7 +5,7 @@
     "2026-11-27",
     "2026-11-28"
   ],
-  "updated_at": "2026-11-27T19:34:04.868656+00:00",
+  "updated_at": "2026-11-27T20:29:13.298360+00:00",
   "games": [
     {
       "id": "2026020408",
@@ -17,13 +17,15 @@
       "id": "2026020405",
       "date": "2026-11-27",
       "label": "Canucks @ Flyers",
-      "status": "PRE"
+      "status": "LIVE",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020405.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020405.HTM"
     },
     {
       "id": "2026020401",
       "date": "2026-11-27",
       "label": "Flames @ Devils",
-      "status": "LIVE",
+      "status": "CRIT",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020401.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020401.HTM"
     },
@@ -31,7 +33,7 @@
       "id": "2026020410",
       "date": "2026-11-27",
       "label": "Golden Knights @ Sharks",
-      "status": "FUT"
+      "status": "PRE"
     },
     {
       "id": "2026020412",
@@ -63,7 +65,7 @@
       "id": "2026020400",
       "date": "2026-11-27",
       "label": "Maple Leafs @ Bruins",
-      "status": "LIVE",
+      "status": "CRIT",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020400.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020400.HTM"
     },
@@ -71,7 +73,9 @@
       "id": "2026020406",
       "date": "2026-11-27",
       "label": "Panthers @ Capitals",
-      "status": "PRE"
+      "status": "LIVE",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020406.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020406.HTM"
     },
     {
       "id": "2026020413",
@@ -89,13 +93,17 @@
       "id": "2026020407",
       "date": "2026-11-27",
       "label": "Red Wings @ Blue Jackets",
-      "status": "PRE"
+      "status": "LIVE",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020407.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020407.HTM"
     },
     {
       "id": "2026020404",
       "date": "2026-11-27",
       "label": "Senators @ Lightning",
-      "status": "PRE"
+      "status": "LIVE",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020404.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020404.HTM"
     },
     {
       "id": "2026020403",
