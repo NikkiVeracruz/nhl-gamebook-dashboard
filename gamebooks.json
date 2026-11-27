@@ -5,7 +5,7 @@
     "2026-11-27",
     "2026-11-28"
   ],
-  "updated_at": "2026-11-27T22:26:05.724131+00:00",
+  "updated_at": "2026-11-27T23:22:30.687315+00:00",
   "games": [
     {
       "id": "2026020408",
@@ -19,7 +19,7 @@
       "id": "2026020405",
       "date": "2026-11-27",
       "label": "Canucks @ Flyers",
-      "status": "LIVE",
+      "status": "OFF",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020405.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020405.HTM"
     },
@@ -79,7 +79,7 @@
       "id": "2026020406",
       "date": "2026-11-27",
       "label": "Panthers @ Capitals",
-      "status": "LIVE",
+      "status": "OFF",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020406.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020406.HTM"
     },
@@ -93,13 +93,15 @@
       "id": "2026020411",
       "date": "2026-11-27",
       "label": "Rangers @ Blackhawks",
-      "status": "PRE"
+      "status": "LIVE",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020411.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020411.HTM"
     },
     {
       "id": "2026020407",
       "date": "2026-11-27",
       "label": "Red Wings @ Blue Jackets",
-      "status": "CRIT",
+      "status": "OFF",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020407.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020407.HTM"
     },
@@ -107,7 +109,7 @@
       "id": "2026020404",
       "date": "2026-11-27",
       "label": "Senators @ Lightning",
-      "status": "LIVE",
+      "status": "OFF",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020404.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020404.HTM"
     },
