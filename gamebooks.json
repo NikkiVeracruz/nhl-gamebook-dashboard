@@ -1,124 +1,12 @@
 {
-  "window_label": "Nov 25, 2026 – Nov 27, 2026 (ET; 3 AM rollover)",
+  "window_label": "Nov 26, 2026 – Nov 28, 2026 (ET; 3 AM rollover)",
   "window_dates": [
-    "2026-11-25",
     "2026-11-26",
-    "2026-11-27"
+    "2026-11-27",
+    "2026-11-28"
   ],
-  "updated_at": "2026-11-26T08:58:56.462279+00:00",
+  "updated_at": "2026-11-27T08:37:15.507869+00:00",
   "games": [
-    {
-      "id": "2026020399",
-      "date": "2026-11-25",
-      "label": "Blackhawks @ Kraken",
-      "status": "OFF",
-      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020399.HTM",
-      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020399.HTM"
-    },
-    {
-      "id": "2026020390",
-      "date": "2026-11-25",
-      "label": "Blues @ Islanders",
-      "status": "OFF",
-      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020390.HTM",
-      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020390.HTM"
-    },
-    {
-      "id": "2026020397",
-      "date": "2026-11-25",
-      "label": "Canadiens @ Avalanche",
-      "status": "OFF",
-      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020397.HTM",
-      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020397.HTM"
-    },
-    {
-      "id": "2026020394",
-      "date": "2026-11-25",
-      "label": "Canucks @ Red Wings",
-      "status": "OFF",
-      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020394.HTM",
-      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020394.HTM"
-    },
-    {
-      "id": "2026020393",
-      "date": "2026-11-25",
-      "label": "Devils @ Blue Jackets",
-      "status": "OFF",
-      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020393.HTM",
-      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020393.HTM"
-    },
-    {
-      "id": "2026020391",
-      "date": "2026-11-25",
-      "label": "Flames @ Penguins",
-      "status": "OFF",
-      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020391.HTM",
-      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020391.HTM"
-    },
-    {
-      "id": "2026020392",
-      "date": "2026-11-25",
-      "label": "Flyers @ Capitals",
-      "status": "OFF",
-      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020392.HTM",
-      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020392.HTM"
-    },
-    {
-      "id": "2026020388",
-      "date": "2026-11-25",
-      "label": "Hurricanes @ Lightning",
-      "status": "OFF",
-      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020388.HTM",
-      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020388.HTM"
-    },
-    {
-      "id": "2026020386",
-      "date": "2026-11-25",
-      "label": "Jets @ Bruins",
-      "status": "OFF",
-      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020386.HTM",
-      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020386.HTM"
-    },
-    {
-      "id": "2026020396",
-      "date": "2026-11-25",
-      "label": "Mammoth @ Wild",
-      "status": "OFF",
-      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020396.HTM",
-      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020396.HTM"
-    },
-    {
-      "id": "2026020395",
-      "date": "2026-11-25",
-      "label": "Predators @ Stars",
-      "status": "OFF",
-      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020395.HTM",
-      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020395.HTM"
-    },
-    {
-      "id": "2026020387",
-      "date": "2026-11-25",
-      "label": "Rangers @ Sabres",
-      "status": "OFF",
-      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020387.HTM",
-      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020387.HTM"
-    },
-    {
-      "id": "2026020389",
-      "date": "2026-11-25",
-      "label": "Senators @ Panthers",
-      "status": "OFF",
-      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020389.HTM",
-      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020389.HTM"
-    },
-    {
-      "id": "2026020398",
-      "date": "2026-11-25",
-      "label": "Sharks @ Ducks",
-      "status": "OFF",
-      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020398.HTM",
-      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020398.HTM"
-    },
     {
       "id": "2026020408",
       "date": "2026-11-27",
@@ -207,6 +95,84 @@
       "id": "2026020403",
       "date": "2026-11-27",
       "label": "Stars @ Blues",
+      "status": "FUT"
+    },
+    {
+      "id": "2026020415",
+      "date": "2026-11-28",
+      "label": "Canadiens @ Golden Knights",
+      "status": "FUT"
+    },
+    {
+      "id": "2026020422",
+      "date": "2026-11-28",
+      "label": "Capitals @ Blues",
+      "status": "FUT"
+    },
+    {
+      "id": "2026020426",
+      "date": "2026-11-28",
+      "label": "Ducks @ Kings",
+      "status": "FUT"
+    },
+    {
+      "id": "2026020419",
+      "date": "2026-11-28",
+      "label": "Flames @ Rangers",
+      "status": "FUT"
+    },
+    {
+      "id": "2026020423",
+      "date": "2026-11-28",
+      "label": "Islanders @ Flyers",
+      "status": "FUT"
+    },
+    {
+      "id": "2026020418",
+      "date": "2026-11-28",
+      "label": "Jets @ Devils",
+      "status": "FUT"
+    },
+    {
+      "id": "2026020416",
+      "date": "2026-11-28",
+      "label": "Lightning @ Panthers",
+      "status": "FUT"
+    },
+    {
+      "id": "2026020424",
+      "date": "2026-11-28",
+      "label": "Mammoth @ Stars",
+      "status": "FUT"
+    },
+    {
+      "id": "2026020420",
+      "date": "2026-11-28",
+      "label": "Maple Leafs @ Penguins",
+      "status": "FUT"
+    },
+    {
+      "id": "2026020427",
+      "date": "2026-11-28",
+      "label": "Oilers @ Kraken",
+      "status": "FUT"
+    },
+    {
+      "id": "2026020417",
+      "date": "2026-11-28",
+      "label": "Predators @ Red Wings",
+      "status": "FUT"
+    },
+    {
+      "id": "2026020421",
+      "date": "2026-11-28",
+      "label": "Senators @ Hurricanes",
+      "status": "FUT"
+    },
+    {
+      "id": "2026020425",
+      "date": "2026-11-28",
+      "label": "Sharks @ Avalanche",
       "status": "FUT"
     }
   ]
