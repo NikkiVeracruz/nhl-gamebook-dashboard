@@ -5,7 +5,7 @@
     "2026-11-27",
     "2026-11-28"
   ],
-  "updated_at": "2026-11-27T08:37:15.507869+00:00",
+  "updated_at": "2026-11-27T17:42:10.278553+00:00",
   "games": [
     {
       "id": "2026020408",
@@ -23,7 +23,7 @@
       "id": "2026020401",
       "date": "2026-11-27",
       "label": "Flames @ Devils",
-      "status": "FUT"
+      "status": "PRE"
     },
     {
       "id": "2026020410",
@@ -53,13 +53,13 @@
       "id": "2026020402",
       "date": "2026-11-27",
       "label": "Mammoth @ Predators",
-      "status": "FUT"
+      "status": "PRE"
     },
     {
       "id": "2026020400",
       "date": "2026-11-27",
       "label": "Maple Leafs @ Bruins",
-      "status": "FUT"
+      "status": "PRE"
     },
     {
       "id": "2026020406",
