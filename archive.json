@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-27T23:22:30.741798+00:00",
+  "updated_at": "2026-11-28T00:12:29.766266+00:00",
   "games": [
     {
       "id": "2026020403",
@@ -50,6 +50,22 @@
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020402.HTM"
     },
     {
+      "id": "2026020409",
+      "date": "2026-11-27",
+      "label": "Kings @ Ducks",
+      "status": "FINAL",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020409.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020409.HTM"
+    },
+    {
+      "id": "2026020410",
+      "date": "2026-11-27",
+      "label": "Golden Knights @ Sharks",
+      "status": "FINAL",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020410.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020410.HTM"
+    },
+    {
       "id": "2026020401",
       "date": "2026-11-27",
       "label": "Flames @ Devils",
@@ -64,6 +80,14 @@
       "status": "OFF",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020405.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020405.HTM"
+    },
+    {
+      "id": "2026020408",
+      "date": "2026-11-27",
+      "label": "Avalanche @ Wild",
+      "status": "FINAL",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020408.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020408.HTM"
     },
     {
       "id": "2026020398",
