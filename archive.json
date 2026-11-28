@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-28T03:28:57.497667+00:00",
+  "updated_at": "2026-11-28T04:32:05.434117+00:00",
   "games": [
     {
       "id": "2026020403",
@@ -34,6 +34,14 @@
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020411.HTM"
     },
     {
+      "id": "2026020413",
+      "date": "2026-11-27",
+      "label": "Penguins @ Sabres",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020413.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020413.HTM"
+    },
+    {
       "id": "2026020406",
       "date": "2026-11-27",
       "label": "Panthers @ Capitals",
@@ -58,6 +66,14 @@
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020402.HTM"
     },
     {
+      "id": "2026020414",
+      "date": "2026-11-27",
+      "label": "Kraken @ Oilers",
+      "status": "OFF",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020414.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020414.HTM"
+    },
+    {
       "id": "2026020409",
       "date": "2026-11-27",
       "label": "Kings @ Ducks",
@@ -69,7 +85,7 @@
       "id": "2026020412",
       "date": "2026-11-27",
       "label": "Jets @ Islanders",
-      "status": "FINAL",
+      "status": "OFF",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020412.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020412.HTM"
     },
