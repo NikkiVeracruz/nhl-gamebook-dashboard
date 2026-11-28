@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-28T02:31:10.711690+00:00",
+  "updated_at": "2026-11-28T03:28:57.497667+00:00",
   "games": [
     {
       "id": "2026020403",
@@ -64,6 +64,14 @@
       "status": "OFF",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020409.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020409.HTM"
+    },
+    {
+      "id": "2026020412",
+      "date": "2026-11-27",
+      "label": "Jets @ Islanders",
+      "status": "FINAL",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020412.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020412.HTM"
     },
     {
       "id": "2026020410",
