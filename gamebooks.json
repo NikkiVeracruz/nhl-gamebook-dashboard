@@ -1,11 +1,11 @@
 {
-  "window_label": "Nov 26, 2026 – Nov 28, 2026 (ET; 3 AM rollover)",
+  "window_label": "Nov 27, 2026 – Nov 29, 2026 (ET; 3 AM rollover)",
   "window_dates": [
-    "2026-11-26",
     "2026-11-27",
-    "2026-11-28"
+    "2026-11-28",
+    "2026-11-29"
   ],
-  "updated_at": "2026-11-28T04:32:05.388402+00:00",
+  "updated_at": "2026-11-28T08:38:18.618755+00:00",
   "games": [
     {
       "id": "2026020408",
@@ -203,6 +203,18 @@
       "id": "2026020425",
       "date": "2026-11-28",
       "label": "Sharks @ Avalanche",
+      "status": "FUT"
+    },
+    {
+      "id": "2026020429",
+      "date": "2026-11-29",
+      "label": "Canucks @ Bruins",
+      "status": "FUT"
+    },
+    {
+      "id": "2026020428",
+      "date": "2026-11-29",
+      "label": "Wild @ Blackhawks",
       "status": "FUT"
     }
   ]
