@@ -5,13 +5,13 @@
     "2026-11-27",
     "2026-11-28"
   ],
-  "updated_at": "2026-11-28T00:12:29.711686+00:00",
+  "updated_at": "2026-11-28T01:28:38.643522+00:00",
   "games": [
     {
       "id": "2026020408",
       "date": "2026-11-27",
       "label": "Avalanche @ Wild",
-      "status": "FINAL",
+      "status": "OFF",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020408.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020408.HTM"
     },
@@ -35,7 +35,7 @@
       "id": "2026020410",
       "date": "2026-11-27",
       "label": "Golden Knights @ Sharks",
-      "status": "FINAL",
+      "status": "OFF",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020410.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020410.HTM"
     },
@@ -43,13 +43,15 @@
       "id": "2026020412",
       "date": "2026-11-27",
       "label": "Jets @ Islanders",
-      "status": "PRE"
+      "status": "LIVE",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020412.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020412.HTM"
     },
     {
       "id": "2026020409",
       "date": "2026-11-27",
       "label": "Kings @ Ducks",
-      "status": "FINAL",
+      "status": "OFF",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020409.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020409.HTM"
     },
@@ -57,7 +59,9 @@
       "id": "2026020414",
       "date": "2026-11-27",
       "label": "Kraken @ Oilers",
-      "status": "FUT"
+      "status": "LIVE",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020414.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020414.HTM"
     },
     {
       "id": "2026020402",
@@ -87,13 +91,15 @@
       "id": "2026020413",
       "date": "2026-11-27",
       "label": "Penguins @ Sabres",
-      "status": "FUT"
+      "status": "LIVE",
+      "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020413.HTM",
+      "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020413.HTM"
     },
     {
       "id": "2026020411",
       "date": "2026-11-27",
       "label": "Rangers @ Blackhawks",
-      "status": "LIVE",
+      "status": "FINAL",
       "gs_url": "https://www.nhl.com/scores/htmlreports/20262027/GS020411.HTM",
       "es_url": "https://www.nhl.com/scores/htmlreports/20262027/ES020411.HTM"
     },
